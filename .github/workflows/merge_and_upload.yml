@@ -26,30 +26,8 @@ jobs:
           import re
           import os
 
-          # ==================== 拼音缩写到中文的映射表 ====================
+          # 拼音缩写到中文的映射表
           PINYIN_TO_CHINESE = {
-              # 央视频道
-              'cctv1': 'CCTV1综合', 'cctv1hd': 'CCTV1综合',
-              'cctv2': 'CCTV2财经', 'cctv2hd': 'CCTV2财经',
-              'cctv3': 'CCTV3综艺', 'cctv3hd': 'CCTV3综艺',
-              'cctv4': 'CCTV4中文国际', 'cctv4hd': 'CCTV4中文国际',
-              'cctv5': 'CCTV5体育', 'cctv5hd': 'CCTV5体育',
-              'cctv5plus': 'CCTV5+', 'cctv5+': 'CCTV5+',
-              'cctv6': 'CCTV6电影', 'cctv6hd': 'CCTV6电影',
-              'cctv7': 'CCTV7国防军事', 'cctv7hd': 'CCTV7国防军事',
-              'cctv8': 'CCTV8电视剧', 'cctv8hd': 'CCTV8电视剧',
-              'cctv9': 'CCTV9纪录', 'cctv9hd': 'CCTV9纪录',
-              'cctv10': 'CCTV10科教', 'cctv10hd': 'CCTV10科教',
-              'cctv11': 'CCTV11戏曲', 'cctv11hd': 'CCTV11戏曲',
-              'cctv12': 'CCTV12社会与法', 'cctv12hd': 'CCTV12社会与法',
-              'cctv13': 'CCTV13新闻', 'cctv13hd': 'CCTV13新闻',
-              'cctv14': 'CCTV14少儿', 'cctv14hd': 'CCTV14少儿',
-              'cctv15': 'CCTV15音乐', 'cctv15hd': 'CCTV15音乐',
-              'cctv16': 'CCTV16奥林匹克', 'cctv16hd': 'CCTV16奥林匹克',
-              'cctv17': 'CCTV17农业农村', 'cctv17hd': 'CCTV17农业农村',
-              'cgtn': 'CGTN', 'cgtnhd': 'CGTN',
-              
-              # 卫视台拼音缩写
               'ahws': '安徽卫视', 'ahws_hd': '安徽卫视',
               'bjws': '北京卫视', 'bjws_hd': '北京卫视',
               'cetv2': 'CETV2',
@@ -84,64 +62,76 @@ jobs:
               'fjws': '东南卫视', 'fjws_hd': '东南卫视',
           }
 
+          def extract_cctv_number(name):
+              """提取CCTV后面的数字，用于排序"""
+              match = re.search(r'CCTV(\d+)', name)
+              if match:
+                  return int(match.group(1))
+              return 999
+
           def normalize_name(name):
               """统一频道名称"""
               name_lower = name.lower().strip()
-              original_name = name
+              name_original = name
               
               # 拼音缩写映射
               if name_lower in PINYIN_TO_CHINESE:
                   return PINYIN_TO_CHINESE[name_lower]
               
-              # 央视各种写法
+              # 处理央视（统一为CCTV+数字格式）
+              # CCTV1 相关
               if re.search(r'cctv[-\s]*1|中央[一1台套]', name_lower):
-                  return 'CCTV1综合'
+                  return 'CCTV1'
               if re.search(r'cctv[-\s]*2|中央[二2台套]', name_lower):
-                  return 'CCTV2财经'
+                  return 'CCTV2'
               if re.search(r'cctv[-\s]*3|中央[三3台套]', name_lower):
-                  return 'CCTV3综艺'
+                  return 'CCTV3'
               if re.search(r'cctv[-\s]*4|中央[四4台套]', name_lower):
-                  return 'CCTV4中文国际'
+                  return 'CCTV4'
               if re.search(r'cctv[-\s]*5\+?|中央[五5台套]', name_lower):
-                  return 'CCTV5体育'
+                  if '5+' in name_lower:
+                      return 'CCTV5+'
+                  return 'CCTV5'
               if re.search(r'cctv[-\s]*6|中央[六6台套]', name_lower):
-                  return 'CCTV6电影'
+                  return 'CCTV6'
               if re.search(r'cctv[-\s]*7|中央[七7台套]', name_lower):
-                  return 'CCTV7国防军事'
+                  return 'CCTV7'
               if re.search(r'cctv[-\s]*8|中央[八8台套]', name_lower):
-                  return 'CCTV8电视剧'
+                  return 'CCTV8'
               if re.search(r'cctv[-\s]*9|中央[九9台套]', name_lower):
-                  return 'CCTV9纪录'
+                  return 'CCTV9'
               if re.search(r'cctv[-\s]*10|中央[十10台套]', name_lower):
-                  return 'CCTV10科教'
+                  return 'CCTV10'
               if re.search(r'cctv11|中央十一', name_lower):
-                  return 'CCTV11戏曲'
+                  return 'CCTV11'
               if re.search(r'cctv12|中央十二', name_lower):
-                  return 'CCTV12社会与法'
+                  return 'CCTV12'
               if re.search(r'cctv13|中央十三', name_lower):
-                  return 'CCTV13新闻'
+                  return 'CCTV13'
               if re.search(r'cctv14|中央十四', name_lower):
-                  return 'CCTV14少儿'
+                  return 'CCTV14'
               if re.search(r'cctv15|中央十五', name_lower):
-                  return 'CCTV15音乐'
+                  return 'CCTV15'
               if re.search(r'cctv16|中央十六', name_lower):
-                  return 'CCTV16奥林匹克'
+                  return 'CCTV16'
               if re.search(r'cctv17|中央十七', name_lower):
-                  return 'CCTV17农业农村'
+                  return 'CCTV17'
+              if re.search(r'cgtn', name_lower):
+                  return 'CGTN'
               
               # 重庆卫视
               if re.search(r'cqws|重庆', name_lower):
                   return '重庆卫视'
               
               # 去掉后缀
-              result = re.sub(r'[_ ]?hd$|高清|超清|标清|4k|测试|备用', '', original_name, flags=re.IGNORECASE)
+              result = re.sub(r'[_ ]?hd$|高清|超清|标清|4k|测试|备用', '', name_original, flags=re.IGNORECASE)
               return result.strip()
 
           def classify_channel(name):
               """分类频道"""
-              if re.search(r'cctv|cgtn|中央|央视', name.lower()):
+              if re.search(r'^CCTV|^CGTN', name):
                   return "央视频道"
-              if '卫视' in name:
+              if name.endswith('卫视'):
                   return "卫视频道"
               return "其他频道"
 
@@ -183,19 +173,39 @@ jobs:
           for url, (name, category) in all_channels.items():
               grouped[category].append((name, url))
 
-          # 生成TXT文件
+          # 在每个分类内排序
+          # 央视频道按数字排序
+          grouped["央视频道"].sort(key=lambda x: extract_cctv_number(x[0]))
+          # 卫视频道按拼音/名称排序
+          grouped["卫视频道"].sort(key=lambda x: x[0])
+          # 其他频道按名称排序
+          grouped["其他频道"].sort(key=lambda x: x[0])
+
+          # 生成带分类的TXT文件（格式：频道名,URL）
           with open('iptv.txt', 'w', encoding='utf-8') as f:
               for category in ["央视频道", "卫视频道", "其他频道"]:
                   channels = grouped[category]
                   if not channels:
                       continue
-                  channels.sort(key=lambda x: x[0])
+                  
+                  # 写入分类标题
+                  f.write(f"{category},#genre#\n")
+                  
                   for name, url in channels:
                       f.write(f"{name},{url}\n")
+                  
+                  # 分类之间加空行
+                  f.write("\n")
 
           print("文件已生成: iptv.txt")
+          print("=" * 40)
           for category, channels in grouped.items():
-              print(f"  {category}: {len(channels)} 个频道")
+              print(f"{category}: {len(channels)} 个频道")
+              if category == "央视频道" and channels:
+                  # 显示前10个CCTV频道名称
+                  cctv_names = [name for name, _ in channels[:10]]
+                  print(f"  示例: {', '.join(cctv_names)}...")
+          print("=" * 40)
           PYTHON_SCRIPT
 
       - name: 运行处理脚本
@@ -242,7 +252,4 @@ jobs:
       - name: 显示结果预览
         run: |
           echo "=== 生成的文件预览 ==="
-          head -20 iptv.txt
-          echo ""
-          echo "=== 统计信息 ==="
-          echo "总频道数: $(wc -l < iptv.txt)"
+          head -30 iptv.txt
