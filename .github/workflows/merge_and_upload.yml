@@ -70,7 +70,7 @@ jobs:
               return 999
 
           def normalize_name(name):
-              """统一频道名称"""
+              """统一频道名称 - 修复版"""
               name_lower = name.lower().strip()
               name_original = name
               
@@ -78,49 +78,51 @@ jobs:
               if name_lower in PINYIN_TO_CHINESE:
                   return PINYIN_TO_CHINESE[name_lower]
               
+              # 使用 word boundaries 精确匹配，避免把 CCTV10 匹配成 CCTV1
               # 处理央视（统一为CCTV+数字格式）
-              # CCTV1 相关
-              if re.search(r'cctv[-\s]*1|中央[一1台套]', name_lower):
+              # CCTV1（单独1，后面不是数字）
+              if re.search(r'\bcctv[-\s]*1\b|中央[一1]台|中央[一1]套', name_lower):
                   return 'CCTV1'
-              if re.search(r'cctv[-\s]*2|中央[二2台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*2\b|中央[二2]台|中央[二2]套', name_lower):
                   return 'CCTV2'
-              if re.search(r'cctv[-\s]*3|中央[三3台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*3\b|中央[三3]台|中央[三3]套', name_lower):
                   return 'CCTV3'
-              if re.search(r'cctv[-\s]*4|中央[四4台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*4\b|中央[四4]台|中央[四4]套', name_lower):
                   return 'CCTV4'
-              if re.search(r'cctv[-\s]*5\+?|中央[五5台套]', name_lower):
-                  if '5+' in name_lower:
-                      return 'CCTV5+'
+              # CCTV5 和 CCTV5+
+              if re.search(r'\bcctv[-\s]*5\+', name_lower):
+                  return 'CCTV5+'
+              if re.search(r'\bcctv[-\s]*5\b|中央[五5]台|中央[五5]套', name_lower):
                   return 'CCTV5'
-              if re.search(r'cctv[-\s]*6|中央[六6台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*6\b|中央[六6]台|中央[六6]套', name_lower):
                   return 'CCTV6'
-              if re.search(r'cctv[-\s]*7|中央[七7台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*7\b|中央[七7]台|中央[七7]套', name_lower):
                   return 'CCTV7'
-              if re.search(r'cctv[-\s]*8|中央[八8台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*8\b|中央[八8]台|中央[八8]套', name_lower):
                   return 'CCTV8'
-              if re.search(r'cctv[-\s]*9|中央[九9台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*9\b|中央[九9]台|中央[九9]套', name_lower):
                   return 'CCTV9'
-              if re.search(r'cctv[-\s]*10|中央[十10台套]', name_lower):
+              if re.search(r'\bcctv[-\s]*10\b|中央[十10]台|中央[十10]套', name_lower):
                   return 'CCTV10'
-              if re.search(r'cctv11|中央十一', name_lower):
+              if re.search(r'\bcctv[-\s]*11\b|中央十一', name_lower):
                   return 'CCTV11'
-              if re.search(r'cctv12|中央十二', name_lower):
+              if re.search(r'\bcctv[-\s]*12\b|中央十二', name_lower):
                   return 'CCTV12'
-              if re.search(r'cctv13|中央十三', name_lower):
+              if re.search(r'\bcctv[-\s]*13\b|中央十三', name_lower):
                   return 'CCTV13'
-              if re.search(r'cctv14|中央十四', name_lower):
+              if re.search(r'\bcctv[-\s]*14\b|中央十四', name_lower):
                   return 'CCTV14'
-              if re.search(r'cctv15|中央十五', name_lower):
+              if re.search(r'\bcctv[-\s]*15\b|中央十五', name_lower):
                   return 'CCTV15'
-              if re.search(r'cctv16|中央十六', name_lower):
+              if re.search(r'\bcctv[-\s]*16\b|中央十六', name_lower):
                   return 'CCTV16'
-              if re.search(r'cctv17|中央十七', name_lower):
+              if re.search(r'\bcctv[-\s]*17\b|中央十七', name_lower):
                   return 'CCTV17'
-              if re.search(r'cgtn', name_lower):
+              if re.search(r'\bcgtn', name_lower):
                   return 'CGTN'
               
               # 重庆卫视
-              if re.search(r'cqws|重庆', name_lower):
+              if re.search(r'\bcqws\b|重庆', name_lower):
                   return '重庆卫视'
               
               # 去掉后缀
@@ -162,6 +164,7 @@ jobs:
                       norm_name = normalize_name(raw_name)
                       category = classify_channel(norm_name)
                       
+                      # 去重：同一个URL只保留第一次出现
                       if url not in all_channels:
                           all_channels[url] = (norm_name, category)
 
@@ -181,20 +184,18 @@ jobs:
           # 其他频道按名称排序
           grouped["其他频道"].sort(key=lambda x: x[0])
 
-          # 生成带分类的TXT文件（格式：频道名,URL）
+          # 生成带分类的TXT文件
           with open('iptv.txt', 'w', encoding='utf-8') as f:
               for category in ["央视频道", "卫视频道", "其他频道"]:
                   channels = grouped[category]
                   if not channels:
                       continue
                   
-                  # 写入分类标题
                   f.write(f"{category},#genre#\n")
                   
                   for name, url in channels:
                       f.write(f"{name},{url}\n")
                   
-                  # 分类之间加空行
                   f.write("\n")
 
           print("文件已生成: iptv.txt")
@@ -202,9 +203,8 @@ jobs:
           for category, channels in grouped.items():
               print(f"{category}: {len(channels)} 个频道")
               if category == "央视频道" and channels:
-                  # 显示前10个CCTV频道名称
-                  cctv_names = [name for name, _ in channels[:10]]
-                  print(f"  示例: {', '.join(cctv_names)}...")
+                  cctv_names = [name for name, _ in channels[:15]]
+                  print(f"  示例: {', '.join(cctv_names)}")
           print("=" * 40)
           PYTHON_SCRIPT
 
@@ -252,4 +252,4 @@ jobs:
       - name: 显示结果预览
         run: |
           echo "=== 生成的文件预览 ==="
-          head -30 iptv.txt
+          head -40 iptv.txt
