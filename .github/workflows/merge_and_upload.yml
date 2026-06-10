@@ -107,11 +107,4 @@ jobs:
           echo "上传完成！"
           echo "CDN 地址: https://${BUCKET}.test.upcdn.net${REMOTE_PATH}"
 
-      - name: 上传到 GitHub Release（可选）
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./live.txt
-          tag_name: "latest"
-          name: "最新直播源"
-          body: "自动合并来自三个源的直播列表"
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+
