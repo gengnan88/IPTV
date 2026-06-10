@@ -1,94 +1,54 @@
-name: 合并、测速并上传直播源
+name: IPTV直播源提取
 
 on:
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
-    inputs:
-      top_speed_count:
-        description: '每个频道保留最快的源数量'
-        required: true
-        default: '10'
-        type: choice
-        options:
-          - '5'
-          - '10'
-          - '15'
-          - '20'
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
 
 jobs:
-  merge-and-upload:
+  extract:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-
-      - name: 安装 ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
-      - name: 下载外部直播源
-        run: |
-          echo "正在下载外部直播源..."
-          curl -sL https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt -o source1.txt || echo "源1下载失败"
-          curl -sL https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt -o source2.txt || echo "源2下载失败"
-          curl -sL https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt -o source3.txt || echo "源3下载失败"
-          
-          # 仓库内的源（放在 output 目录下）
-          if [ -f "output/iptv.txt" ]; then
-            cp output/iptv.txt source4.txt
-            echo "✓ 已加载仓库内源: output/iptv.txt"
-          else
-            echo "! 未找到仓库内源，跳过"
-          fi
-          
-          echo "源文件列表:"
-          ls -la source*.txt 2>/dev/null || echo "没有找到源文件"
-
-      - name: 运行处理脚本
-        env:
-          TOP_SPEED_COUNT: ${{ github.event.inputs.top_speed_count || '10' }}
-        run: python3 scripts/process.py
-
-      - name: 上传到又拍云
-        env:
-          UPYUN_BUCKET: ${{ secrets.UPYUN_BUCKET }}
-          UPYUN_OPERATOR: ${{ secrets.UPYUN_OPERATOR }}
-          UPYUN_PASSWORD_MD5: ${{ secrets.UPYUN_PASSWORD_MD5 }}
-        run: |
-          BUCKET="$UPYUN_BUCKET"
-          OPERATOR="$UPYUN_OPERATOR"
-          PASSWORD_MD5="$UPYUN_PASSWORD_MD5"
-          
-          for FILE in iptv.txt iptv.m3u; do
-            if [ -f "$FILE" ]; then
-              REMOTE_PATH="/$FILE"
-              LOCAL_FILE="./$FILE"
-              FILE_SIZE=$(stat -c%s "$LOCAL_FILE")
-              CONTENT_MD5=$(md5sum "$LOCAL_FILE" | cut -d' ' -f1)
-              DATE=$(date -u -R | sed 's/+0000/GMT/')
-              URI="/${BUCKET}${REMOTE_PATH}"
-              MAC_STRING="PUT&${URI}&${DATE}&${CONTENT_MD5}"
-              SIGNATURE=$(echo -n "$MAC_STRING" | openssl sha1 -hmac "$PASSWORD_MD5" -binary | base64)
-              
-              echo "正在上传 $FILE ..."
-              curl -X PUT "https://v0.api.upyun.com${URI}" \
-                -H "Host: v0.api.upyun.com" \
-                -H "Date: ${DATE}" \
-                -H "Authorization: UPYUN ${OPERATOR}:${SIGNATURE}" \
-                -H "Content-MD5: ${CONTENT_MD5}" \
-                -H "Content-Length: ${FILE_SIZE}" \
-                --data-binary "@${LOCAL_FILE}"
-              echo ""
-            fi
-          done
-          
-          echo "=========================================="
-          echo "上传完成！"
-          echo "TXT地址: https://${BUCKET}.test.upcdn.net/iptv.txt"
-          echo "M3U地址: https://${BUCKET}.test.upcdn.net/iptv.m3u"
-          echo "=========================================="
-
-      - name: 显示结果预览
-        run: |
-          echo "=== iptv.txt 预览（前20行）==="
-          head -20 iptv.txt
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 设置Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: 安装依赖
+      run: pip install requests
+    
+    - name: 运行提取脚本
+      run: python extract_iptv.py
+    
+    - name: 提交文件到仓库
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # 添加文件
+        git add -f output/iptv.m3u output/iptv.txt output/iptv.json 2>/dev/null || true
+        
+        # 检查是否有变化
+        if git diff --cached --quiet; then
+          echo "无变化，跳过提交"
+          exit 0
+        fi
+        
+        # 提交
+        git commit -m "自动更新IPTV直播源 - $(date '+%Y-%m-%d %H:%M:%S')"
+        
+        # 拉取远程更新并推送
+        git pull origin main --rebase || true
+        git push origin main
