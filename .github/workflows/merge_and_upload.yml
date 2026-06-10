@@ -1,0 +1,117 @@
+name: 合并直播源并上传到又拍云
+
+on:
+  schedule:
+    # 每天凌晨2点自动运行
+    - cron: '0 2 * * *'
+  workflow_dispatch:   # 允许手动触发
+
+jobs:
+  merge-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 下载并合并直播源
+        run: |
+          # 创建临时目录
+          mkdir -p ./temp
+          
+          # 定义源文件URL列表
+          SOURCES=(
+            "https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt"
+            "https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt"
+            "https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt"
+          )
+          
+          # 合并所有源文件
+          MERGED_FILE="./temp/merged_raw.txt"
+          > "$MERGED_FILE"  # 清空文件
+          
+          for url in "${SOURCES[@]}"; do
+            echo "正在下载: $url"
+            # 下载文件，如果失败则跳过
+            curl -s -L --connect-timeout 10 "$url" >> "$MERGED_FILE" || echo "警告: 下载失败 $url"
+            echo "" >> "$MERGED_FILE"  # 添加换行分隔
+          done
+          
+          echo "原始合并文件大小: $(wc -l < "$MERGED_FILE") 行"
+
+      - name: 处理 M3U 格式（去重、清理）
+        run: |
+          INPUT_FILE="./temp/merged_raw.txt"
+          OUTPUT_FILE="./live.txt"
+          
+          # 提取唯一的 URL（基于地址去重，保留第一次出现的频道名）
+          # 使用 awk 处理：只保留每个 URL 的第一个条目
+          awk -F',' '
+            {
+              # 提取 URL 部分（第二个字段）
+              url = $2
+              # 如果这个 URL 还没出现过，则保留整行
+              if (!(url in seen)) {
+                seen[url] = 1
+                print $0
+              }
+            }
+          ' "$INPUT_FILE" > "$OUTPUT_FILE"
+          
+          # 统计结果
+          echo "去重后文件大小: $(wc -l < "$OUTPUT_FILE") 行"
+          
+          # 可选：按频道名称排序
+          sort -t',' -k1 "$OUTPUT_FILE" -o "$OUTPUT_FILE"
+          
+          # 显示前5行预览
+          echo "文件预览:"
+          head -5 "$OUTPUT_FILE"
+
+      - name: 上传到又拍云
+        env:
+          UPYUN_BUCKET: ${{ secrets.UPYUN_BUCKET }}
+          UPYUN_OPERATOR: ${{ secrets.UPYUN_OPERATOR }}
+          UPYUN_PASSWORD_MD5: ${{ secrets.UPYUN_PASSWORD_MD5 }}
+        run: |
+          BUCKET="$UPYUN_BUCKET"
+          OPERATOR="$UPYUN_OPERATOR"
+          PASSWORD_MD5="$UPYUN_PASSWORD_MD5"
+          REMOTE_PATH="/live.txt"
+          LOCAL_FILE="./live.txt"
+          
+          # 检查文件是否存在
+          if [ ! -f "$LOCAL_FILE" ]; then
+            echo "错误: 文件 $LOCAL_FILE 不存在"
+            exit 1
+          fi
+          
+          # 获取文件信息
+          FILE_SIZE=$(stat -c%s "$LOCAL_FILE")
+          CONTENT_MD5=$(md5sum "$LOCAL_FILE" | cut -d' ' -f1)
+          DATE=$(date -u -R | sed 's/+0000/GMT/')
+          
+          # 构建签名
+          URI="/${BUCKET}${REMOTE_PATH}"
+          MAC_STRING="PUT&${URI}&${DATE}&${CONTENT_MD5}"
+          SIGNATURE=$(echo -n "$MAC_STRING" | openssl sha1 -hmac "$PASSWORD_MD5" -binary | base64)
+          
+          # 执行上传
+          curl -X PUT "https://v0.api.upyun.com${URI}" \
+            -H "Host: v0.api.upyun.com" \
+            -H "Date: ${DATE}" \
+            -H "Authorization: UPYUN ${OPERATOR}:${SIGNATURE}" \
+            -H "Content-MD5: ${CONTENT_MD5}" \
+            -H "Content-Length: ${FILE_SIZE}" \
+            --data-binary "@${LOCAL_FILE}"
+          
+          echo "上传完成！"
+          echo "CDN 地址: https://${BUCKET}.test.upcdn.net${REMOTE_PATH}"
+
+      - name: 上传到 GitHub Release（可选）
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./live.txt
+          tag_name: "latest"
+          name: "最新直播源"
+          body: "自动合并来自三个源的直播列表"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
