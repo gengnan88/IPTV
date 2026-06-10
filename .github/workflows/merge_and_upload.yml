@@ -16,8 +16,7 @@ on:
           - '15'
           - '20'
           - '全部'
-permissions:
-  contents: write
+
 jobs:
   merge-and-classify:
     runs-on: ubuntu-latest
