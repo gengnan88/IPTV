@@ -1,110 +1,144 @@
-name: 合并直播源并上传到又拍云
+name: 合并、分类并上传直播源
 
 on:
   schedule:
-    # 每天凌晨2点自动运行
     - cron: '0 2 * * *'
-  workflow_dispatch:   # 允许手动触发
+  workflow_dispatch:
 
 jobs:
-  merge-sources:
+  merge-and-classify:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 下载并合并直播源
+      - name: 下载直播源文件
         run: |
-          # 创建临时目录
-          mkdir -p ./temp
-          
-          # 定义源文件URL列表
-          SOURCES=(
-            "https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt"
-            "https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt"
-            "https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt"
-          )
-          
-          # 合并所有源文件
-          MERGED_FILE="./temp/merged_raw.txt"
-          > "$MERGED_FILE"  # 清空文件
-          
-          for url in "${SOURCES[@]}"; do
-            echo "正在下载: $url"
-            # 下载文件，如果失败则跳过
-            curl -s -L --connect-timeout 10 "$url" >> "$MERGED_FILE" || echo "警告: 下载失败 $url"
-            echo "" >> "$MERGED_FILE"  # 添加换行分隔
-          done
-          
-          echo "原始合并文件大小: $(wc -l < "$MERGED_FILE") 行"
+          echo "正在下载直播源..."
+          curl -sL https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt -o source1.txt || echo "源1下载失败"
+          curl -sL https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt -o source2.txt || echo "源2下载失败"
+          curl -sL https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt -o source3.txt || echo "源3下载失败"
+          echo "下载完成"
 
-      - name: 处理 M3U 格式（去重、清理）
+      - name: 合并、分类、统一命名
         run: |
-          INPUT_FILE="./temp/merged_raw.txt"
-          OUTPUT_FILE="./live.txt"
-          
-          # 提取唯一的 URL（基于地址去重，保留第一次出现的频道名）
-          # 使用 awk 处理：只保留每个 URL 的第一个条目
-          awk -F',' '
-            {
-              # 提取 URL 部分（第二个字段）
-              url = $2
-              # 如果这个 URL 还没出现过，则保留整行
-              if (!(url in seen)) {
-                seen[url] = 1
-                print $0
-              }
-            }
-          ' "$INPUT_FILE" > "$OUTPUT_FILE"
-          
-          # 统计结果
-          echo "去重后文件大小: $(wc -l < "$OUTPUT_FILE") 行"
-          
-          # 可选：按频道名称排序
-          sort -t',' -k1 "$OUTPUT_FILE" -o "$OUTPUT_FILE"
-          
-          # 显示前5行预览
-          echo "文件预览:"
-          head -5 "$OUTPUT_FILE"
+          python3 << 'EOF'
+          import re
+          import os
 
-      - name: 上传到又拍云
-        env:
-          UPYUN_BUCKET: ${{ secrets.UPYUN_BUCKET }}
-          UPYUN_OPERATOR: ${{ secrets.UPYUN_OPERATOR }}
-          UPYUN_PASSWORD_MD5: ${{ secrets.UPYUN_PASSWORD_MD5 }}
-        run: |
-          BUCKET="$UPYUN_BUCKET"
-          OPERATOR="$UPYUN_OPERATOR"
-          PASSWORD_MD5="$UPYUN_PASSWORD_MD5"
-          REMOTE_PATH="/live.txt"
-          LOCAL_FILE="./live.txt"
-          
-          # 检查文件是否存在
-          if [ ! -f "$LOCAL_FILE" ]; then
-            echo "错误: 文件 $LOCAL_FILE 不存在"
-            exit 1
-          fi
-          
-          # 获取文件信息
-          FILE_SIZE=$(stat -c%s "$LOCAL_FILE")
-          CONTENT_MD5=$(md5sum "$LOCAL_FILE" | cut -d' ' -f1)
-          DATE=$(date -u -R | sed 's/+0000/GMT/')
-          
-          # 构建签名
-          URI="/${BUCKET}${REMOTE_PATH}"
-          MAC_STRING="PUT&${URI}&${DATE}&${CONTENT_MD5}"
-          SIGNATURE=$(echo -n "$MAC_STRING" | openssl sha1 -hmac "$PASSWORD_MD5" -binary | base64)
-          
-          # 执行上传
-          curl -X PUT "https://v0.api.upyun.com${URI}" \
-            -H "Host: v0.api.upyun.com" \
-            -H "Date: ${DATE}" \
-            -H "Authorization: UPYUN ${OPERATOR}:${SIGNATURE}" \
-            -H "Content-MD5: ${CONTENT_MD5}" \
-            -H "Content-Length: ${FILE_SIZE}" \
-            --data-binary "@${LOCAL_FILE}"
-          
-          echo "上传完成！"
-          echo "CDN 地址: https://${BUCKET}.test.upcdn.net${REMOTE_PATH}"
+          # ==================== 拼音缩写到中文的映射表 ====================
+          PINYIN_TO_CHINESE = {
+              # 央视频道
+              'cctv1': 'CCTV1综合', 'cctv1hd': 'CCTV1综合',
+              'cctv2': 'CCTV2财经', 'cctv2hd': 'CCTV2财经',
+              'cctv3': 'CCTV3综艺', 'cctv3hd': 'CCTV3综艺',
+              'cctv4': 'CCTV4中文国际', 'cctv4hd': 'CCTV4中文国际',
+              'cctv5': 'CCTV5体育', 'cctv5hd': 'CCTV5体育',
+              'cctv5plus': 'CCTV5+', 'cctv5+': 'CCTV5+',
+              'cctv6': 'CCTV6电影', 'cctv6hd': 'CCTV6电影',
+              'cctv7': 'CCTV7国防军事', 'cctv7hd': 'CCTV7国防军事',
+              'cctv8': 'CCTV8电视剧', 'cctv8hd': 'CCTV8电视剧',
+              'cctv9': 'CCTV9纪录', 'cctv9hd': 'CCTV9纪录',
+              'cctv10': 'CCTV10科教', 'cctv10hd': 'CCTV10科教',
+              'cctv11': 'CCTV11戏曲', 'cctv11hd': 'CCTV11戏曲',
+              'cctv12': 'CCTV12社会与法', 'cctv12hd': 'CCTV12社会与法',
+              'cctv13': 'CCTV13新闻', 'cctv13hd': 'CCTV13新闻',
+              'cctv14': 'CCTV14少儿', 'cctv14hd': 'CCTV14少儿',
+              'cctv15': 'CCTV15音乐', 'cctv15hd': 'CCTV15音乐',
+              'cctv16': 'CCTV16奥林匹克', 'cctv16hd': 'CCTV16奥林匹克',
+              'cctv17': 'CCTV17农业农村', 'cctv17hd': 'CCTV17农业农村',
+              'cgtn': 'CGTN', 'cgtnhd': 'CGTN',
+              
+              # 卫视台拼音缩写
+              'ahws': '安徽卫视', 'ahws_hd': '安徽卫视',
+              'bjws': '北京卫视', 'bjws_hd': '北京卫视',
+              'cetv2': 'CETV2',
+              'hljws': '黑龙江卫视', 'hljws_hd': '黑龙江卫视',
+              'hebws': '河北卫视', 'hebws_hd': '河北卫视',
+              'henws': '河南卫视', 'henws_hd': '河南卫视',
+              'hnws': '湖南卫视', 'hnws_hd': '湖南卫视', 'hunan': '湖南卫视',
+              'dfws': '东方卫视', 'dfws_hd': '东方卫视', 'dongfang': '东方卫视',
+              'jsws': '江苏卫视', 'jsws_hd': '江苏卫视', 'jiangsu': '江苏卫视',
+              'zjws': '浙江卫视', 'zjws_hd': '浙江卫视', 'zhejiang': '浙江卫视',
+              'gdws': '广东卫视', 'gdws_hd': '广东卫视', 'guangdong': '广东卫视',
+              'szws': '深圳卫视', 'szws_hd': '深圳卫视', 'shenzhen': '深圳卫视',
+              'sdws': '山东卫视', 'sdws_hd': '山东卫视', 'shandong': '山东卫视',
+              'hbws': '湖北卫视', 'hbws_hd': '湖北卫视', 'hubei': '湖北卫视',
+              'jlws': '吉林卫视', 'jlws_hd': '吉林卫视', 'jilin': '吉林卫视',
+              'jxws': '江西卫视', 'jxws_hd': '江西卫视', 'jiangxi': '江西卫视',
+              'lnws': '辽宁卫视', 'lnws_hd': '辽宁卫视', 'liaoning': '辽宁卫视',
+              'nxws': '宁夏卫视', 'nxws_hd': '宁夏卫视', 'ningxia': '宁夏卫视',
+              'qhws': '青海卫视', 'qhws_hd': '青海卫视', 'qinghai': '青海卫视',
+              'scws': '四川卫视', 'scws_hd': '四川卫视', 'sichuan': '四川卫视',
+              'sxws': '山西卫视', 'sxws_hd': '山西卫视', 'shanxi': '山西卫视',
+              'shxws': '陕西卫视', 'shxws_hd': '陕西卫视', 'shanxi3': '陕西卫视',
+              'tjws': '天津卫视', 'tjws_hd': '天津卫视', 'tianjin': '天津卫视',
+              'ynws': '云南卫视', 'ynws_hd': '云南卫视', 'yunnan': '云南卫视',
+              'gxws': '广西卫视', 'gxws_hd': '广西卫视', 'guangxi': '广西卫视',
+              'gzws': '贵州卫视', 'gzws_hd': '贵州卫视', 'guizhou': '贵州卫视',
+              'gsgs': '甘肃卫视', 'gsgs_hd': '甘肃卫视', 'gansu': '甘肃卫视',
+              'xjws': '新疆卫视', 'xjws_hd': '新疆卫视', 'xinjiang': '新疆卫视',
+              'xzws': '西藏卫视', 'xzws_hd': '西藏卫视', 'xizang': '西藏卫视',
+              'nmws': '内蒙古卫视', 'nmws_hd': '内蒙古卫视', 'neimenggu': '内蒙古卫视',
+              'cqws': '重庆卫视', 'cqws_hd': '重庆卫视', 'chongqing': '重庆卫视',
+              'fjws': '东南卫视', 'fjws_hd': '东南卫视', 'dnws': '东南卫视',
+              'hkws': '海南卫视', 'hkws_hd': '海南卫视', 'hainan': '海南卫视',
+              
+              # 数字频道
+              'qsqs': '求索记录', 'hxjs': '欢笑剧场', 'dsjc': '都市剧场',
+              'dmxc': '动漫秀场', 'fztd': '法治天地', 'shss': '生活时尚',
+              'kaka': '卡酷少儿', 'yxjy': '游戏风云', 'yypd': '茶频道',
+              'jyjs': '金鹰纪实', 'klcd': '快乐垂钓', 'xfpy': '先锋乒羽',
+              'jsxt': '金色学堂', 'cftx': '财富天下', 'xgzqw': '新视觉',
+              'shpd': '书画频道', 'gxpd': '国学频道', 'zhtc': '中华特产',
+          }
 
+          def normalize_name(name):
+              """统一频道名称：拼音缩写转中文，央视频道统一命名"""
+              name_lower = name.lower().strip()
+              original_name = name
+              
+              # 1. 先处理拼音缩写映射
+              for pinyin, chinese in PINYIN_TO_CHINESE.items():
+                  if name_lower == pinyin or name_lower.startswith(pinyin + '_') or name_lower == pinyin + 'hd':
+                      return chinese
+              
+              # 2. 处理央视各种写法
+              cctv_patterns = [
+                  (r'cctv[-\s]*1', 'CCTV1综合'), (r'中央[一1台套]', 'CCTV1综合'),
+                  (r'cctv[-\s]*2', 'CCTV2财经'), (r'中央[二2台套]', 'CCTV2财经'),
+                  (r'cctv[-\s]*3', 'CCTV3综艺'), (r'中央[三3台套]', 'CCTV3综艺'),
+                  (r'cctv[-\s]*4', 'CCTV4中文国际'), (r'中央[四4台套]', 'CCTV4中文国际'),
+                  (r'cctv[-\s]*5\+?', 'CCTV5体育' if '5+' not in name_lower else 'CCTV5+'), (r'中央[五5台套]', 'CCTV5体育'),
+                  (r'cctv[-\s]*6', 'CCTV6电影'), (r'中央[六6台套]', 'CCTV6电影'),
+                  (r'cctv[-\s]*7', 'CCTV7国防军事'), (r'中央[七7台套]', 'CCTV7国防军事'),
+                  (r'cctv[-\s]*8', 'CCTV8电视剧'), (r'中央[八8台套]', 'CCTV8电视剧'),
+                  (r'cctv[-\s]*9', 'CCTV9纪录'), (r'中央[九9台套]', 'CCTV9纪录'),
+                  (r'cctv[-\s]*10', 'CCTV10科教'), (r'中央[十10台套]', 'CCTV10科教'),
+                  (r'cctv[-\s]*11', 'CCTV11戏曲'), (r'cctv[-\s]*12', 'CCTV12社会与法'),
+                  (r'cctv[-\s]*13', 'CCTV13新闻'), (r'cctv[-\s]*14', 'CCTV14少儿'),
+                  (r'cctv[-\s]*15', 'CCTV15音乐'), (r'cctv[-\s]*16', 'CCTV16奥林匹克'),
+                  (r'cctv[-\s]*17', 'CCTV17农业农村'),
+              ]
+              for pattern, repl in cctv_patterns:
+                  if re.search(pattern, name_lower):
+                      return repl
+              
+              # 3. 处理重庆卫视
+              if re.search(r'cqws|重庆', name_lower):
+                  return '重庆卫视'
+              
+              # 4. 去掉常见后缀
+              suffixes = ['高清', '超清', '标清', 'hd', '4k', '测试', '备用', '_hd']
+              result = original_name
+              for suffix in suffixes:
+                  result = re.sub(rf'{suffix}$', '', result, flags=re.IGNORECASE)
+              
+              return result.strip()
 
+          def classify_channel(name):
+              """分类频道"""
+              name_lower = name.lower()
+              if re.search(r'cctv|cgtn|中央|央视', name_lower):
+                  return "央视频道"
+              elif 
