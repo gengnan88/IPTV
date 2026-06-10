@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-IPTV直播源域名提取工具 - 保存到代码库版本
+IPTV直播源域名提取工具 - 剔除内网IP版本
 """
 
 import requests
 import re
 import json
 import os
+import ipaddress
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
@@ -42,6 +43,100 @@ DOMAINS = [
     "http://dh.wifi98.com:9901/",
     "http://i2.ekesh.cn:9999/",
 ]
+
+# ============== 内网IP段定义 ==============
+PRIVATE_IP_RANGES = [
+    # A类内网
+    ipaddress.ip_network('10.0.0.0/8'),
+    # B类内网
+    ipaddress.ip_network('172.16.0.0/12'),
+    # C类内网
+    ipaddress.ip_network('192.168.0.0/16'),
+    # 回环地址
+    ipaddress.ip_network('127.0.0.0/8'),
+    # APIPA地址
+    ipaddress.ip_network('169.254.0.0/16'),
+    # 组播地址
+    ipaddress.ip_network('224.0.0.0/4'),
+    # 保留地址
+    ipaddress.ip_network('240.0.0.0/4'),
+    # 广播地址
+    ipaddress.ip_network('255.255.255.255/32'),
+]
+
+# 内网IP前缀（快速过滤）
+PRIVATE_IP_PREFIXES = (
+    '10.', '127.', '169.254.', '172.16.', '172.17.', '172.18.', '172.19.',
+    '172.20.', '172.21.', '172.22.', '172.23.', '172.24.', '172.25.', '172.26.',
+    '172.27.', '172.28.', '172.29.', '172.30.', '172.31.', '192.168.',
+    '224.', '225.', '226.', '227.', '228.', '229.', '230.', '231.', '232.',
+    '233.', '234.', '235.', '236.', '237.', '238.', '239.', '240.', '241.',
+    '242.', '243.', '244.', '245.', '246.', '247.', '248.', '249.', '250.',
+    '251.', '252.', '253.', '254.', '255.', '0.0.0.0',
+)
+
+# 已知的有效公网IP段（河南地区常用）
+PUBLIC_IP_RANGES = [
+    '1.', '39.', '42.', '61.', '106.', '115.', '123.', '125.', '171.', '182.', '219.', '221.', '222.'
+]
+
+# ============== IP判断函数 ==============
+def is_private_ip(ip_str):
+    """判断IP是否为内网IP"""
+    if not ip_str:
+        return True
+    
+    # 快速前缀检查
+    for prefix in PRIVATE_IP_PREFIXES:
+        if ip_str.startswith(prefix):
+            return True
+    
+    try:
+        ip = ipaddress.ip_address(ip_str)
+        # 检查是否在已知内网段中
+        for network in PRIVATE_IP_RANGES:
+            if ip in network:
+                return True
+        return False
+    except ValueError:
+        # 不是有效IP地址（可能是域名），暂时放行
+        return False
+
+def is_valid_public_ip(ip_str):
+    """判断是否为有效的公网IP"""
+    return not is_private_ip(ip_str)
+
+def extract_ip_from_url(url):
+    """从URL中提取IP地址"""
+    match = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', url)
+    if match:
+        return match.group(1)
+    return None
+
+def is_valid_stream_url(url):
+    """判断流URL是否有效（非内网）"""
+    ip = extract_ip_from_url(url)
+    if ip:
+        return is_valid_public_ip(ip)
+    # 域名地址，暂时放行
+    return True
+
+def is_private_domain(domain_url):
+    """判断域名是否指向内网IP"""
+    try:
+        import socket
+        # 提取域名
+        parsed = urlparse(domain_url)
+        hostname = parsed.hostname
+        if not hostname:
+            return True
+        
+        # 尝试解析域名
+        ip = socket.gethostbyname(hostname)
+        return is_private_ip(ip)
+    except:
+        # 解析失败，保留（可能是临时故障）
+        return False
 
 # ============== 工具函数 ==============
 def clean_domain(domain):
@@ -129,6 +224,8 @@ def fetch_from_domain(domain_url):
             
             if 'data' in data and isinstance(data['data'], list):
                 results = []
+                private_count = 0
+                
                 for item in data['data']:
                     if isinstance(item, dict):
                         raw_name = item.get('name')
@@ -146,17 +243,24 @@ def fetch_from_domain(domain_url):
                                     else:
                                         full_url = base_url + '/' + url_path
                                 
-                                results.append({
-                                    'name': clean_name,
-                                    'url': full_url,
-                                    'source': source_name
-                                })
+                                # 检查是否为内网IP
+                                if is_valid_stream_url(full_url):
+                                    results.append({
+                                        'name': clean_name,
+                                        'url': full_url,
+                                        'source': source_name
+                                    })
+                                else:
+                                    private_count += 1
                 
                 if results:
-                    print(f'  ✅ {source_name}: {len(results)}个频道')
+                    print(f'  ✅ {source_name}: {len(results)}个频道 (剔除{private_count}个内网源)')
                     return results
                 else:
-                    print(f'  ⚠️ {source_name}: 无有效频道')
+                    if private_count > 0:
+                        print(f'  ⚠️ {source_name}: 全部为内网源 ({private_count}个)')
+                    else:
+                        print(f'  ⚠️ {source_name}: 无有效频道')
             else:
                 print(f'  ⚠️ {source_name}: 数据格式错误')
         else:
@@ -176,9 +280,16 @@ def fetch_from_domain(domain_url):
 def fetch_all():
     """从所有域名获取频道"""
     print('=' * 60)
-    print('IPTV直播源域名提取工具')
+    print('IPTV直播源域名提取工具 - 剔除内网IP')
     print(f'运行时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     print('=' * 60)
+    
+    # 内网IP说明
+    print('\n📌 过滤规则:')
+    print('   - 内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x')
+    print('   - 回环地址: 127.x.x.x')
+    print('   - 组播地址: 224.x.x.x-239.x.x.x')
+    print('   - 保留地址: 240.x.x.x-255.x.x.x')
     
     domains = [clean_domain(d) for d in DOMAINS]
     print(f'\n📡 待提取域名: {len(domains)} 个\n')
@@ -223,6 +334,16 @@ def save_results(channels):
     
     print(f'   去重后: {len(unique)} 个')
     
+    # 统计内网剔除情况
+    private_count = 0
+    for ch in channels:
+        ip = extract_ip_from_url(ch['url'])
+        if ip and is_private_ip(ip):
+            private_count += 1
+    
+    if private_count > 0:
+        print(f'   剔除内网源: {private_count} 个')
+    
     # 创建输出目录
     os.makedirs('output', exist_ok=True)
     
@@ -237,7 +358,8 @@ def save_results(channels):
     with open('output/iptv.m3u', 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         f.write(f'# 生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
-        f.write(f'# 频道数量: {len(unique)}\n\n')
+        f.write(f'# 频道数量: {len(unique)}\n')
+        f.write(f'# 过滤规则: 已剔除内网IP、组播IP、保留IP\n\n')
         
         for group in group_order:
             if group not in groups:
@@ -268,7 +390,8 @@ def save_results(channels):
     with open('output/iptv.txt', 'w', encoding='utf-8') as f:
         f.write(f'# IPTV直播源\n')
         f.write(f'# 生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
-        f.write(f'# 频道数量: {len(channel_urls)}\n\n')
+        f.write(f'# 频道数量: {len(channel_urls)}\n')
+        f.write(f'# 过滤规则: 已剔除内网IP、组播IP、保留IP\n\n')
         
         for name in sorted(channel_urls.keys()):
             combined = '#'.join(channel_urls[name])
@@ -279,6 +402,12 @@ def save_results(channels):
     # 保存JSON
     json_data = {
         'generated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'filter_rules': [
+            '内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x',
+            '回环地址: 127.x.x.x',
+            '组播地址: 224.x.x.x-239.x.x.x',
+            '保留地址: 240.x.x.x-255.x.x.x'
+        ],
         'total_channels': len(unique),
         'channels': {}
     }
@@ -299,6 +428,24 @@ def save_results(channels):
         count = len(groups.get(group, []))
         if count > 0:
             print(f'   {group}: {count} 个')
+    
+    # 保存过滤报告
+    with open('output/filter_report.txt', 'w', encoding='utf-8') as f:
+        f.write('=' * 60 + '\n')
+        f.write('内网IP过滤报告\n')
+        f.write('=' * 60 + '\n\n')
+        f.write(f'生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n\n')
+        f.write('过滤规则:\n')
+        f.write('  1. 内网IP: 10.0.0.0/8\n')
+        f.write('  2. 内网IP: 172.16.0.0/12\n')
+        f.write('  3. 内网IP: 192.168.0.0/16\n')
+        f.write('  4. 回环地址: 127.0.0.0/8\n')
+        f.write('  5. APIPA地址: 169.254.0.0/16\n')
+        f.write('  6. 组播地址: 224.0.0.0/4\n')
+        f.write('  7. 保留地址: 240.0.0.0/4\n\n')
+        f.write(f'最终保留频道: {len(unique)} 个\n')
+    
+    print(f'✅ 已保存过滤报告: output/filter_report.txt')
     
     return True
 
