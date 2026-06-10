@@ -3,15 +3,19 @@
 
 import re
 import os
+import json
 import subprocess
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 
 # ==================== 配置 ====================
 TOP_SPEED_COUNT = int(os.environ.get('TOP_SPEED_COUNT', '10'))
 SPEED_TIMEOUT = 8
-SPEED_WORKERS = 15
+RESOLUTION_TIMEOUT = 10
+SPEED_WORKERS = 10
+RESOLUTION_WORKERS = 5
 # =============================================
 
 # 拼音缩写到中文的映射表
@@ -50,6 +54,20 @@ PINYIN_TO_CHINESE = {
     'fjws': '东南卫视', 'fjws_hd': '东南卫视',
 }
 
+# 分辨率优先级映射（数值越高越优先）
+RESOLUTION_PRIORITY = {
+    '8K': 100,
+    '4K': 90,
+    '2160p': 85,
+    '1080p': 80,
+    '1080i': 75,
+    '720p': 70,
+    '576p': 60,
+    '480p': 50,
+    '360p': 40,
+    'unknown': 10,
+}
+
 def extract_cctv_number(name):
     """提取CCTV后面的数字，用于排序"""
     match = re.search(r'CCTV(\d+)', name)
@@ -58,52 +76,40 @@ def extract_cctv_number(name):
     return 999
 
 def normalize_name(name):
-    """统一频道名称"""
+    """智能统一频道名称"""
     name_lower = name.lower().strip()
     name_original = name
     
+    # 拼音缩写映射
     if name_lower in PINYIN_TO_CHINESE:
         return PINYIN_TO_CHINESE[name_lower]
     
     # 央视匹配（使用单词边界）
-    if re.search(r'\bcctv[-\s]*1\b|中央[一1]台|中央[一1]套', name_lower):
-        return 'CCTV1'
-    if re.search(r'\bcctv[-\s]*2\b|中央[二2]台|中央[二2]套', name_lower):
-        return 'CCTV2'
-    if re.search(r'\bcctv[-\s]*3\b|中央[三3]台|中央[三3]套', name_lower):
-        return 'CCTV3'
-    if re.search(r'\bcctv[-\s]*4\b|中央[四4]台|中央[四4]套', name_lower):
-        return 'CCTV4'
-    if re.search(r'\bcctv[-\s]*5\+', name_lower):
-        return 'CCTV5+'
-    if re.search(r'\bcctv[-\s]*5\b|中央[五5]台|中央[五5]套', name_lower):
-        return 'CCTV5'
-    if re.search(r'\bcctv[-\s]*6\b|中央[六6]台|中央[六6]套', name_lower):
-        return 'CCTV6'
-    if re.search(r'\bcctv[-\s]*7\b|中央[七7]台|中央[七7]套', name_lower):
-        return 'CCTV7'
-    if re.search(r'\bcctv[-\s]*8\b|中央[八8]台|中央[八8]套', name_lower):
-        return 'CCTV8'
-    if re.search(r'\bcctv[-\s]*9\b|中央[九9]台|中央[九9]套', name_lower):
-        return 'CCTV9'
-    if re.search(r'\bcctv[-\s]*10\b|中央[十10]台|中央[十10]套', name_lower):
-        return 'CCTV10'
-    if re.search(r'\bcctv[-\s]*11\b|中央十一', name_lower):
-        return 'CCTV11'
-    if re.search(r'\bcctv[-\s]*12\b|中央十二', name_lower):
-        return 'CCTV12'
-    if re.search(r'\bcctv[-\s]*13\b|中央十三', name_lower):
-        return 'CCTV13'
-    if re.search(r'\bcctv[-\s]*14\b|中央十四', name_lower):
-        return 'CCTV14'
-    if re.search(r'\bcctv[-\s]*15\b|中央十五', name_lower):
-        return 'CCTV15'
-    if re.search(r'\bcctv[-\s]*16\b|中央十六', name_lower):
-        return 'CCTV16'
-    if re.search(r'\bcctv[-\s]*17\b|中央十七', name_lower):
-        return 'CCTV17'
-    if re.search(r'\bcgtn', name_lower):
-        return 'CGTN'
+    cctv_patterns = [
+        (r'\bcctv[-\s]*1\b|中央[一1]台|中央[一1]套|CCTV-?1[综]*', 'CCTV1'),
+        (r'\bcctv[-\s]*2\b|中央[二2]台|中央[二2]套|CCTV-?2[财]*', 'CCTV2'),
+        (r'\bcctv[-\s]*3\b|中央[三3]台|中央[三3]套|CCTV-?3[综]*', 'CCTV3'),
+        (r'\bcctv[-\s]*4\b|中央[四4]台|中央[四4]套|CCTV-?4[中文]*', 'CCTV4'),
+        (r'\bcctv[-\s]*5\+', 'CCTV5+'),
+        (r'\bcctv[-\s]*5\b|中央[五5]台|中央[五5]套|CCTV-?5[体]*', 'CCTV5'),
+        (r'\bcctv[-\s]*6\b|中央[六6]台|中央[六6]套|CCTV-?6[电]*', 'CCTV6'),
+        (r'\bcctv[-\s]*7\b|中央[七7]台|中央[七7]套|CCTV-?7[军]*', 'CCTV7'),
+        (r'\bcctv[-\s]*8\b|中央[八8]台|中央[八8]套|CCTV-?8[剧]*', 'CCTV8'),
+        (r'\bcctv[-\s]*9\b|中央[九9]台|中央[九9]套|CCTV-?9[纪]*', 'CCTV9'),
+        (r'\bcctv[-\s]*10\b|中央[十10]台|中央[十10]套', 'CCTV10'),
+        (r'\bcctv[-\s]*11\b|中央十一', 'CCTV11'),
+        (r'\bcctv[-\s]*12\b|中央十二', 'CCTV12'),
+        (r'\bcctv[-\s]*13\b|中央十三', 'CCTV13'),
+        (r'\bcctv[-\s]*14\b|中央十四', 'CCTV14'),
+        (r'\bcctv[-\s]*15\b|中央十五', 'CCTV15'),
+        (r'\bcctv[-\s]*16\b|中央十六', 'CCTV16'),
+        (r'\bcctv[-\s]*17\b|中央十七', 'CCTV17'),
+        (r'\bcgtn', 'CGTN'),
+    ]
+    
+    for pattern, replacement in cctv_patterns:
+        if re.search(pattern, name_lower):
+            return replacement
     
     # 重庆卫视
     if re.search(r'\bcqws\b|重庆', name_lower):
@@ -113,8 +119,57 @@ def normalize_name(name):
     result = re.sub(r'[_ ]?hd$|高清|超清|标清|4k|测试|备用|_hd', '', name_original, flags=re.IGNORECASE)
     return result.strip()
 
+def parse_resolution(width, height):
+    """根据宽高解析分辨率等级"""
+    if not width or not height or width == 0 or height == 0:
+        return 'unknown'
+    
+    if width >= 7680 or height >= 4320:
+        return '8K'
+    if width >= 3840 or height >= 2160:
+        return '4K'
+    if width >= 1920 or height >= 1080:
+        return '1080p'
+    if width >= 1280 or height >= 720:
+        return '720p'
+    if width >= 720 or height >= 576:
+        return '576p'
+    if width >= 640 or height >= 480:
+        return '480p'
+    return '360p'
+
+def get_resolution_info(url, timeout=RESOLUTION_TIMEOUT):
+    """使用 ffprobe 获取视频分辨率"""
+    try:
+        cmd = [
+            'ffprobe', '-v', 'quiet',
+            '-print_format', 'json',
+            '-show_streams',
+            '-timeout', str(timeout * 1000000),
+            url
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout + 5)
+        
+        if result.returncode != 0:
+            return 'unknown', 0, 0
+        
+        data = json.loads(result.stdout)
+        video_streams = [s for s in data.get('streams', []) if s.get('codec_type') == 'video']
+        
+        if not video_streams:
+            return 'unknown', 0, 0
+        
+        stream = video_streams[0]
+        width = stream.get('width', 0)
+        height = stream.get('height', 0)
+        resolution = parse_resolution(width, height)
+        
+        return resolution, width, height
+    except Exception:
+        return 'unknown', 0, 0
+
 def test_speed(url, timeout=SPEED_TIMEOUT):
-    """使用 ffmpeg 测试流媒体速度"""
+    """使用 ffmpeg 测试流媒体速度，返回速度 MB/s"""
     try:
         with tempfile.NamedTemporaryFile(delete=True, suffix='.ts') as temp_file:
             cmd = [
@@ -150,20 +205,39 @@ def test_speed(url, timeout=SPEED_TIMEOUT):
         pass
     return 0.0
 
+def classify_channel(name):
+    """智能分类频道"""
+    name_lower = name.lower()
+    
+    # 央视频道
+    if re.search(r'^cctv|^cgtn|央视|中央', name_lower):
+        return "央视频道"
+    
+    # 卫视频道
+    if name.endswith('卫视'):
+        return "卫视频道"
+    
+    # 数字/付费频道
+    digital_keywords = ['求索', '欢笑', '都市', '动漫', '法治', '生活', '纪实', '垂钓', '乒羽', '卡通']
+    for kw in digital_keywords:
+        if kw in name:
+            return "数字频道"
+    
+    return "其他频道"
+
 def main():
     print("=" * 60)
-    print("IPTV 直播源处理工具")
-    print(f"每个频道保留最快的前 {TOP_SPEED_COUNT if TOP_SPEED_COUNT < 999 else '全部'} 个源")
+    print("IPTV 直播源智能处理工具")
+    print(f"每个频道保留最快的前 {TOP_SPEED_COUNT} 个源")
+    print(f"排序规则: 优先高分辨率，同分辨率按速度排序")
     print("=" * 60)
     
     # 读取所有源文件
-    all_urls = []
-    source_count = 0
+    all_sources = []
     for i in range(1, 5):
         filename = f'source{i}.txt'
         if not os.path.exists(filename):
             continue
-        source_count += 1
         print(f"读取源文件: {filename}")
         with open(filename, 'r', encoding='utf-8') as f:
             for line in f:
@@ -178,94 +252,110 @@ def main():
                 if not url.startswith('http'):
                     continue
                 norm_name = normalize_name(raw_name)
-                all_urls.append((norm_name, url))
+                all_sources.append((norm_name, url))
     
-    print(f"共收集 {len(all_urls)} 个频道源")
+    print(f"共收集 {len(all_sources)} 个频道源")
     
     # 去重
-    unique_urls = {}
-    for name, url in all_urls:
+    unique_sources = {}
+    for name, url in all_sources:
         key = f"{name}|{url}"
-        if key not in unique_urls:
-            unique_urls[key] = (name, url)
+        if key not in unique_sources:
+            unique_sources[key] = (name, url)
     
-    unique_list = list(unique_urls.values())
+    unique_list = list(unique_sources.values())
     print(f"去重后 {len(unique_list)} 个频道源")
     
-    # 测速
-    print(f"\n开始测速...")
-    speed_results = []
+    # 获取分辨率信息
+    print(f"\n正在获取分辨率信息...")
+    resolution_results = {}
+    with ThreadPoolExecutor(max_workers=RESOLUTION_WORKERS) as executor:
+        futures = {executor.submit(get_resolution_info, url): (name, url) for name, url in unique_list}
+        completed = 0
+        for future in as_completed(futures):
+            name, url = futures[future]
+            resolution, width, height = future.result()
+            resolution_results[url] = (resolution, width, height)
+            completed += 1
+            print(f"[{completed}/{len(unique_list)}] {name}: {resolution}")
     
+    # 测速
+    print(f"\n正在测速...")
+    speed_results = {}
     with ThreadPoolExecutor(max_workers=SPEED_WORKERS) as executor:
         futures = {executor.submit(test_speed, url): (name, url) for name, url in unique_list}
         completed = 0
         for future in as_completed(futures):
             name, url = futures[future]
             speed = future.result()
-            speed_results.append((name, url, speed))
+            speed_results[url] = speed
             completed += 1
             status = f"{speed:.2f} MB/s" if speed > 0 else "失败"
             print(f"[{completed}/{len(unique_list)}] {name}: {status}")
     
-    # 按频道分组排序
+    # 按频道分组，计算综合评分
     channel_groups = {}
-    for name, url, speed in speed_results:
+    for name, url in unique_list:
+        resolution, _, _ = resolution_results.get(url, ('unknown', 0, 0))
+        speed = speed_results.get(url, 0)
+        
+        # 综合评分 = 分辨率优先级 * 10 + 速度
+        resolution_priority = RESOLUTION_PRIORITY.get(resolution, 10)
+        score = resolution_priority * 10 + speed
+        
         if name not in channel_groups:
             channel_groups[name] = []
-        channel_groups[name].append((url, speed))
+        channel_groups[name].append((url, score, speed, resolution))
     
+    # 每个频道按评分排序，保留前 TOP_SPEED_COUNT 个
     final_channels = []
     for name, urls in channel_groups.items():
         urls.sort(key=lambda x: x[1], reverse=True)
-        keep_count = TOP_SPEED_COUNT if TOP_SPEED_COUNT < 999 else len(urls)
-        for url, speed in urls[:keep_count]:
-            final_channels.append((name, url, speed))
+        keep_count = min(TOP_SPEED_COUNT, len(urls))
+        for url, score, speed, resolution in urls[:keep_count]:
+            final_channels.append((name, url, speed, resolution))
     
-    print(f"每个频道保留最快源后，共 {len(final_channels)} 个频道源")
+    print(f"\n每个频道保留高分辨率+快速源后，共 {len(final_channels)} 个频道源")
     
     # 分类
-    def classify_channel(name):
-        if re.search(r'^CCTV|^CGTN', name):
-            return "央视频道"
-        if name.endswith('卫视'):
-            return "卫视频道"
-        return "其他频道"
-    
-    grouped = {"央视频道": [], "卫视频道": [], "其他频道": []}
-    for name, url, speed in final_channels:
+    grouped = {"央视频道": [], "卫视频道": [], "数字频道": [], "其他频道": []}
+    for name, url, speed, resolution in final_channels:
         category = classify_channel(name)
-        grouped[category].append((name, url, speed))
+        grouped[category].append((name, url, speed, resolution))
     
     # 排序
     grouped["央视频道"].sort(key=lambda x: extract_cctv_number(x[0]))
     grouped["卫视频道"].sort(key=lambda x: x[0])
+    grouped["数字频道"].sort(key=lambda x: x[0])
     grouped["其他频道"].sort(key=lambda x: x[0])
     
     # 生成 TXT 文件
     with open('iptv.txt', 'w', encoding='utf-8') as f:
-        for category in ["央视频道", "卫视频道", "其他频道"]:
+        for category in ["央视频道", "卫视频道", "数字频道", "其他频道"]:
             channels = grouped[category]
             if not channels:
                 continue
             f.write(f"{category},#genre#\n")
-            for name, url, speed in channels:
+            for name, url, speed, resolution in channels:
                 f.write(f"{name},{url}\n")
             f.write("\n")
     
-    # 生成 M3U 文件
+    # 生成 M3U 文件（带分辨率标签）
     with open('iptv.m3u', 'w', encoding='utf-8') as f:
         f.write("#EXTM3U\n")
-        for category in ["央视频道", "卫视频道", "其他频道"]:
+        for category in ["央视频道", "卫视频道", "数字频道", "其他频道"]:
             channels = grouped[category]
-            for name, url, speed in channels:
-                f.write(f'#EXTINF:-1 group-title="{category}",{name}\n')
+            for name, url, speed, resolution in channels:
+                display_name = f"{name} [{resolution}]" if resolution != 'unknown' else name
+                f.write(f'#EXTINF:-1 group-title="{category}",{display_name}\n')
                 f.write(f'{url}\n')
     
     print("=" * 60)
     print("文件已生成: iptv.txt 和 iptv.m3u")
     for category, channels in grouped.items():
         if channels:
-            print(f"{category}: {len(channels)} 个频道源")
+            high_res = sum(1 for _, _, _, r in channels if r in ['4K', '1080p', '1080i', '720p'])
+            print(f"{category}: {len(channels)} 个频道源 (高分辨率: {high_res})")
     print("=" * 60)
 
 if __name__ == "__main__":
