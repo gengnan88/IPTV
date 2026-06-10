@@ -159,7 +159,7 @@ def main():
     # 读取所有源文件
     all_urls = []
     source_count = 0
-    for i in range(1, 5):  # 支持 source1.txt 到 source4.txt
+    for i in range(1, 5):
         filename = f'source{i}.txt'
         if not os.path.exists(filename):
             continue
@@ -249,8 +249,7 @@ def main():
                 continue
             f.write(f"{category},#genre#\n")
             for name, url, speed in channels:
-              
-            f.write(f"{name},{url}\n")
+                f.write(f"{name},{url}\n")
             f.write("\n")
     
     # 生成 M3U 文件
@@ -259,7 +258,6 @@ def main():
         for category in ["央视频道", "卫视频道", "其他频道"]:
             channels = grouped[category]
             for name, url, speed in channels:
-                
                 f.write(f'#EXTINF:-1 group-title="{category}",{name}\n')
                 f.write(f'{url}\n')
     
