@@ -2,14 +2,16 @@ name: IPTV直播源提取
 
 on:
   schedule:
-    # 每天凌晨2点自动运行
     - cron: '0 2 * * *'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
   push:
     branches: [ main, master ]
-    paths:
-      - 'domain_sources.txt'
-      - 'extract_iptv.py'
+
+# 关键：授予完整的写入权限
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   extract:
@@ -18,8 +20,10 @@ jobs:
     steps:
     - name: 检出代码
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     
-    - name: 设置Python环境
+    - name: 设置Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
@@ -27,45 +31,166 @@ jobs:
     - name: 安装依赖
       run: |
         pip install requests
-        pip install beautifulsoup4
     
     - name: 创建输出目录
       run: mkdir -p output
     
     - name: 运行提取脚本
-      run: python extract_iptv.py
+      run: |
+        cat > extract_iptv.py << 'EOF'
+import requests
+import re
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+DOMAINS = [
+    "ltypth.cn:9901",
+    "zh.10010tv.cn:9901",
+    "iptv.my669.com:9901",
+    "wgrmyy.cn:9901",
+    "jxx.wlzsyw.cn:9901",
+    "zsh.ltypth.cn:9901",
+    "http://dz.mzsyt.com:7066/",
+    "http://ozxz.cncnnc.com:9901/",
+    "http://baoqing003.coccc.online:9901/",
+    "http://itv.inrand.com:9888/",
+    "http://iptv.my669.com:9903/",
+    "http://www.kingtom-tech.com:9902/",
+    "http://sun135790.x3322.net:9902/",
+    "http://wxapi.hqqgbxy.com:9901/",
+    "http://iptv.zhonghenginfo.cn:8989/",
+    "http://hunhhyd.sohu.blog:9999/",
+    "http://ekesh.cn:9999/",
+    "http://zh.ltypth.cn:9901/",
+    "http://tpc.x3322.net:9901/",
+    "http://demo.ruijingnet.com:2001/",
+    "http://fujuniptv.cn:9901/",
+    "http://51chuquwan.com:10133/",
+    "http://sykj1.3322.org:9901/",
+    "http://shuangyashan.coccc.online:65000/",
+    "http://bpt.wifi98.com:9901/",
+    "http://dh.wifi98.com:9901/",
+    "http://i2.ekesh.cn:9999/",
+]
+
+def clean_domain(d):
+    d = d.strip()
+    if not d.startswith('http'):
+        d = f"http://{d}"
+    if not d.endswith('/'):
+        d = f"{d}/"
+    return d
+
+def normalize_name(name):
+    if not name:
+        return None
+    name = name.upper()
+    name = re.sub(r'\s+|-|\*|频道|高清|HD|标清|\(.*?\)', '', name)
+    name = re.sub(r'CCTV-?(\d+)', r'CCTV\1', name)
+    cctv_map = {
+        'CCTV1综合': 'CCTV1', 'CCTV2财经': 'CCTV2', 'CCTV3综艺': 'CCTV3',
+        'CCTV4中文国际': 'CCTV4', 'CCTV5体育': 'CCTV5', 'CCTV5+体育': 'CCTV5+',
+        'CCTV6电影': 'CCTV6', 'CCTV7军事': 'CCTV7', 'CCTV8电视剧': 'CCTV8',
+        'CCTV9纪录': 'CCTV9', 'CCTV10科教': 'CCTV10', 'CCTV11戏曲': 'CCTV11',
+        'CCTV12社会与法': 'CCTV12', 'CCTV13新闻': 'CCTV13', 'CCTV新闻': 'CCTV13',
+        'CCTV14少儿': 'CCTV14', 'CCTV15音乐': 'CCTV15', 'CCTV16奥林匹克': 'CCTV16',
+        'CCTV17农业农村': 'CCTV17'
+    }
+    for k, v in cctv_map.items():
+        if k in name:
+            return v
+    name = name.strip()
+    return name if len(name) >= 2 else None
+
+def fetch_domain(domain):
+    json_url = f"{domain}iptv/live/1000.json?key=txiptv"
+    try:
+        r = requests.get(json_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+        if r.status_code == 200:
+            data = r.json()
+            if 'data' in data:
+                results = []
+                for item in data['data']:
+                    name = item.get('name')
+                    url_path = item.get('url')
+                    if name and url_path:
+                        clean = normalize_name(name)
+                        if clean:
+                            if url_path.startswith('http'):
+                                full = url_path
+                            else:
+                                base = domain.rstrip('/')
+                                full = base + (url_path if url_path.startswith('/') else '/' + url_path)
+                            results.append((clean, full))
+                return results
+    except:
+        pass
+    return []
+
+def main():
+    print(f"开始提取 - {datetime.now()}")
+    domains = [clean_domain(d) for d in DOMAINS]
+    all_channels = []
     
-    - name: 上传结果文件
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {executor.submit(fetch_domain, d): d for d in domains}
+        for future in as_completed(futures):
+            results = future.result()
+            if results:
+                all_channels.extend(results)
+    
+    # 去重
+    seen = set()
+    unique = []
+    for name, url in all_channels:
+        key = f"{name}_{url}"
+        if key not in seen:
+            seen.add(key)
+            unique.append((name, url))
+    
+    print(f"共获取 {len(unique)} 个频道")
+    
+    # 保存M3U
+    with open("output/iptv_domain.m3u", "w", encoding='utf-8') as f:
+        f.write("#EXTM3U\n")
+        for name, url in sorted(unique):
+            if 'CCTV' in name:
+                group = "央视频道"
+            elif '卫视' in name:
+                group = "卫视频道"
+            else:
+                group = "其他频道"
+            f.write(f'#EXTINF:-1 group-title="{group}",{name}\n{url}\n')
+    
+    # 保存TXT
+    with open("output/iptv_domain.txt", "w", encoding='utf-8') as f:
+        for name, url in sorted(unique):
+            f.write(f"{name},{url}\n")
+    
+    print("保存完成")
+
+if __name__ == "__main__":
+    main()
+EOF
+        python extract_iptv.py
+    
+    - name: 列出输出文件
+      run: |
+        echo "=== 输出文件 ==="
+        ls -la output/
+    
+    - name: 上传artifact
       uses: actions/upload-artifact@v4
       with:
         name: iptv-sources
         path: output/
-        retention-days: 7
     
     - name: 部署到GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./output
         publish_branch: gh-pages
-        destination_dir: .
-        keep_files: false
-    
-    - name: 创建发布
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: iptv-latest
-        name: "IPTV直播源 - ${{ github.run_number }}"
-        body: |
-          ## 更新时间
-          ${{ github.event.head_commit.timestamp }}
-          
-          ## 文件说明
-          - `iptv_domain.m3u` - M3U格式直播源
-          - `iptv_domain.txt` - TXT格式直播源
-          - `iptv_domain.json` - JSON格式详细数据
-        files: |
-          output/iptv_domain.m3u
-          output/iptv_domain.txt
-          output/iptv_domain.json
-      continue-on-error: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: '自动更新IPTV直播源'
