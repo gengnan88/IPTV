@@ -29,13 +29,25 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: 下载直播源文件
-        run: |
-          echo "正在下载直播源..."
-          curl -sL https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt -o source1.txt || echo "源1下载失败"
-          curl -sL https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt -o source2.txt || echo "源2下载失败"
-          curl -sL https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt -o source3.txt || echo "源3下载失败"
-          echo "下载完成"
+     - name: 下载直播源文件
+  run: |
+    echo "正在下载直播源..."
+    # 外部源
+    curl -sL https://raw.githubusercontent.com/fqw000/TVCrazy/refs/heads/main/output/itvlist.txt -o source1.txt || echo "源1下载失败"
+    curl -sL https://raw.githubusercontent.com/liulei120/TVCrazy/refs/heads/main/output/itvlist.txt -o source2.txt || echo "源2下载失败"
+    curl -sL https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt -o source3.txt || echo "源3下载失败"
+    
+    # 仓库内的源（因为已经 checkout，文件已经在本地）
+    # 你的 iptv.txt 文件在仓库的 output 目录下
+    if [ -f "output/iptv.txt" ]; then
+      cp output/iptv.txt source4.txt
+      echo "✓ 成功加载仓库内源: output/iptv.txt"
+    else
+      echo "! 警告: 仓库内源 output/iptv.txt 不存在"
+    fi
+    
+    echo "下载完成"
+    ls -la source*.txt
 
       - name: 创建处理脚本（合并+分类+测速）
         run: |
