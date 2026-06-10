@@ -216,7 +216,7 @@ jobs:
           # 读取并合并所有源文件
           all_urls = []  # (name, url) 列表
           
-          for i in range(1, 4):
+          for i in range(1, 5):
               filename = f'source{i}.txt'
               if not os.path.exists(filename):
                   print(f"文件 {filename} 不存在，跳过")
