@@ -1,9 +1,21 @@
-name: 合并、分类并上传直播源
+name: 合并、分类、测速并上传直播源
 
 on:
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
+    inputs:
+      top_speed_count:
+        description: '每个频道保留最快的源数量'
+        required: true
+        default: '10'
+        type: choice
+        options:
+          - '5'
+          - '10'
+          - '15'
+          - '20'
+          - '全部'
 
 jobs:
   merge-and-classify:
@@ -11,6 +23,11 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
+
+      - name: 安装依赖
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
 
       - name: 下载直播源文件
         run: |
@@ -20,12 +37,27 @@ jobs:
           curl -sL https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt -o source3.txt || echo "源3下载失败"
           echo "下载完成"
 
-      - name: 创建处理脚本
+      - name: 创建处理脚本（合并+分类+测速）
         run: |
           cat > process.py << 'PYTHON_SCRIPT'
           import re
           import os
-
+          import subprocess
+          import tempfile
+          import time
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          
+          # ==================== 配置 ====================
+          TOP_SPEED_COUNT = os.environ.get('TOP_SPEED_COUNT', '10')
+          if TOP_SPEED_COUNT == '全部':
+              TOP_SPEED_COUNT = 999
+          else:
+              TOP_SPEED_COUNT = int(TOP_SPEED_COUNT)
+          
+          SPEED_TIMEOUT = 8  # 测速超时秒数
+          SPEED_WORKERS = 15  # 并发测速线程数
+          # =============================================
+          
           # 拼音缩写到中文的映射表
           PINYIN_TO_CHINESE = {
               'ahws': '安徽卫视', 'ahws_hd': '安徽卫视',
@@ -61,26 +93,23 @@ jobs:
               'cqws': '重庆卫视', 'cqws_hd': '重庆卫视',
               'fjws': '东南卫视', 'fjws_hd': '东南卫视',
           }
-
+          
           def extract_cctv_number(name):
               """提取CCTV后面的数字，用于排序"""
               match = re.search(r'CCTV(\d+)', name)
               if match:
                   return int(match.group(1))
               return 999
-
+          
           def normalize_name(name):
-              """统一频道名称 - 修复版"""
+              """统一频道名称"""
               name_lower = name.lower().strip()
               name_original = name
               
-              # 拼音缩写映射
               if name_lower in PINYIN_TO_CHINESE:
                   return PINYIN_TO_CHINESE[name_lower]
               
-              # 使用 word boundaries 精确匹配，避免把 CCTV10 匹配成 CCTV1
-              # 处理央视（统一为CCTV+数字格式）
-              # CCTV1（单独1，后面不是数字）
+              # 央视匹配（使用单词边界）
               if re.search(r'\bcctv[-\s]*1\b|中央[一1]台|中央[一1]套', name_lower):
                   return 'CCTV1'
               if re.search(r'\bcctv[-\s]*2\b|中央[二2]台|中央[二2]套', name_lower):
@@ -89,7 +118,6 @@ jobs:
                   return 'CCTV3'
               if re.search(r'\bcctv[-\s]*4\b|中央[四4]台|中央[四4]套', name_lower):
                   return 'CCTV4'
-              # CCTV5 和 CCTV5+
               if re.search(r'\bcctv[-\s]*5\+', name_lower):
                   return 'CCTV5+'
               if re.search(r'\bcctv[-\s]*5\b|中央[五5]台|中央[五5]套', name_lower):
@@ -126,19 +154,55 @@ jobs:
                   return '重庆卫视'
               
               # 去掉后缀
-              result = re.sub(r'[_ ]?hd$|高清|超清|标清|4k|测试|备用', '', name_original, flags=re.IGNORECASE)
+              result = re.sub(r'[_ ]?hd$|高清|超清|标清|4k|测试|备用|_hd', '', name_original, flags=re.IGNORECASE)
               return result.strip()
-
-          def classify_channel(name):
-              """分类频道"""
-              if re.search(r'^CCTV|^CGTN', name):
-                  return "央视频道"
-              if name.endswith('卫视'):
-                  return "卫视频道"
-              return "其他频道"
-
+          
+          def test_speed(url, timeout=SPEED_TIMEOUT):
+              """使用 ffmpeg 测试流媒体速度，返回速度 MB/s，失败返回 0"""
+              try:
+                  with tempfile.NamedTemporaryFile(delete=True, suffix='.ts') as temp_file:
+                      cmd = [
+                          'ffmpeg', '-y',
+                          '-timeout', str(timeout * 1000000),
+                          '-user_agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                          '-i', url,
+                          '-t', str(timeout),
+                          '-c', 'copy',
+                          '-f', 'mpegts',
+                          temp_file.name
+                      ]
+                      start_time = time.time()
+                      process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                      
+                      try:
+                          process.communicate(timeout=timeout + 2)
+                      except subprocess.TimeoutExpired:
+                          process.kill()
+                          process.wait()
+                      
+                      end_time = time.time()
+                      duration = end_time - start_time
+                      
+                      try:
+                          file_size = os.path.getsize(temp_file.name)
+                          if file_size > 10240 and duration > 0.1:
+                              speed_mbps = (file_size / duration) / (1024 * 1024)
+                              return round(speed_mbps, 2)
+                      except:
+                          pass
+              except Exception as e:
+                  pass
+              return 0.0
+          
+          print("=" * 60)
+          print("IPTV 直播源处理工具")
+          print(f"每个频道保留最快的前 {TOP_SPEED_COUNT if TOP_SPEED_COUNT < 999 else '全部'} 个源")
+          print(f"测速超时: {SPEED_TIMEOUT} 秒")
+          print(f"并发线程: {SPEED_WORKERS}")
+          print("=" * 60)
+          
           # 读取并合并所有源文件
-          all_channels = {}
+          all_urls = []  # (name, url) 列表
           
           for i in range(1, 4):
               filename = f'source{i}.txt'
@@ -162,29 +226,81 @@ jobs:
                           continue
                       
                       norm_name = normalize_name(raw_name)
-                      category = classify_channel(norm_name)
-                      
-                      # 去重：同一个URL只保留第一次出现
-                      if url not in all_channels:
-                          all_channels[url] = (norm_name, category)
-
-          print(f"合并去重后共 {len(all_channels)} 个频道")
-
-          # 按分类分组
-          grouped = {"央视频道": [], "卫视频道": [], "其他频道": []}
+                      all_urls.append((norm_name, url))
           
-          for url, (name, category) in all_channels.items():
-              grouped[category].append((name, url))
-
+          print(f"共收集 {len(all_urls)} 个频道源")
+          
+          # 去重（同一频道名+同一URL只保留一个）
+          unique_urls = {}
+          for name, url in all_urls:
+              key = f"{name}|{url}"
+              if key not in unique_urls:
+                  unique_urls[key] = (name, url)
+          
+          unique_list = list(unique_urls.values())
+          print(f"去重后 {len(unique_list)} 个频道源")
+          
+          # 测速
+          print(f"\n开始测速...")
+          speed_results = []  # (name, url, speed)
+          
+          with ThreadPoolExecutor(max_workers=SPEED_WORKERS) as executor:
+              futures = {executor.submit(test_speed, url): (name, url) for name, url in unique_list}
+              
+              completed = 0
+              for future in as_completed(futures):
+                  name, url = futures[future]
+                  speed = future.result()
+                  speed_results.append((name, url, speed))
+                  completed += 1
+                  
+                  if speed > 0:
+                      print(f"[{completed}/{len(unique_list)}] ✓ {name}: {speed:.2f} MB/s")
+                  else:
+                      print(f"[{completed}/{len(unique_list)}] ✗ {name}: 测速失败")
+          
+          # 统计测速结果
+          valid_count = len([s for _,_,s in speed_results if s > 0])
+          print(f"\n测速完成: 有效 {valid_count}/{len(unique_list)} 个源")
+          
+          # 按频道名分组，每个频道内按速度排序
+          channel_groups = {}
+          for name, url, speed in speed_results:
+              if name not in channel_groups:
+                  channel_groups[name] = []
+              channel_groups[name].append((url, speed))
+          
+          # 每个频道按速度降序排列，只保留前 TOP_SPEED_COUNT 个
+          final_channels = []
+          for name, urls in channel_groups.items():
+              # 按速度排序（高速到低速）
+              urls.sort(key=lambda x: x[1], reverse=True)
+              # 保留前 N 个
+              keep_count = TOP_SPEED_COUNT if TOP_SPEED_COUNT < 999 else len(urls)
+              for url, speed in urls[:keep_count]:
+                  final_channels.append((name, url, speed))
+          
+          print(f"每个频道保留最快源后，共 {len(final_channels)} 个频道源")
+          
+          # 按分类分组
+          def classify_channel(name):
+              if re.search(r'^CCTV|^CGTN', name):
+                  return "央视频道"
+              if name.endswith('卫视'):
+                  return "卫视频道"
+              return "其他频道"
+          
+          grouped = {"央视频道": [], "卫视频道": [], "其他频道": []}
+          for name, url, speed in final_channels:
+              category = classify_channel(name)
+              grouped[category].append((name, url, speed))
+          
           # 在每个分类内排序
-          # 央视频道按数字排序
           grouped["央视频道"].sort(key=lambda x: extract_cctv_number(x[0]))
-          # 卫视频道按拼音/名称排序
           grouped["卫视频道"].sort(key=lambda x: x[0])
-          # 其他频道按名称排序
           grouped["其他频道"].sort(key=lambda x: x[0])
-
-          # 生成带分类的TXT文件
+          
+          # 生成带分类和速度注释的 TXT 文件
           with open('iptv.txt', 'w', encoding='utf-8') as f:
               for category in ["央视频道", "卫视频道", "其他频道"]:
                   channels = grouped[category]
@@ -193,22 +309,42 @@ jobs:
                   
                   f.write(f"{category},#genre#\n")
                   
-                  for name, url in channels:
-                      f.write(f"{name},{url}\n")
+                  for name, url, speed in channels:
+                      if speed > 0:
+                          f.write(f"{name} [{speed:.1f}MB/s],{url}\n")
+                      else:
+                          f.write(f"{name},{url}\n")
                   
                   f.write("\n")
-
-          print("文件已生成: iptv.txt")
-          print("=" * 40)
+          
+          # 生成 M3U 格式文件
+          with open('iptv.m3u', 'w', encoding='utf-8') as f:
+              f.write("#EXTM3U\n")
+              for category in ["央视频道", "卫视频道", "其他频道"]:
+                  channels = grouped[category]
+                  for name, url, speed in channels:
+                      if speed > 0:
+                          f.write(f'#EXTINF:-1 group-title="{category}",{name} [{speed:.1f}MB/s]\n')
+                      else:
+                          f.write(f'#EXTINF:-1 group-title="{category}",{name}\n')
+                      f.write(f'{url}\n')
+          
+          print("=" * 60)
+          print("文件已生成:")
+          print(f"  - iptv.txt (TXT格式)")
+          print(f"  - iptv.m3u (M3U格式)")
+          print(f"\n各分类统计:")
           for category, channels in grouped.items():
-              print(f"{category}: {len(channels)} 个频道")
-              if category == "央视频道" and channels:
-                  cctv_names = [name for name, _ in channels[:15]]
-                  print(f"  示例: {', '.join(cctv_names)}")
-          print("=" * 40)
+              if channels:
+                  speeds = [s for _,_,s in channels if s > 0]
+                  avg_speed = sum(speeds)/len(speeds) if speeds else 0
+                  print(f"  {category}: {len(channels)} 个源, 平均速度 {avg_speed:.1f} MB/s")
+          print("=" * 60)
           PYTHON_SCRIPT
 
-      - name: 运行处理脚本
+      - name: 运行处理脚本（测速+合并+分类）
+        env:
+          TOP_SPEED_COUNT: ${{ github.event.inputs.top_speed_count || '10' }}
         run: python3 process.py
 
       - name: 上传到又拍云
@@ -220,36 +356,47 @@ jobs:
           BUCKET="$UPYUN_BUCKET"
           OPERATOR="$UPYUN_OPERATOR"
           PASSWORD_MD5="$UPYUN_PASSWORD_MD5"
-          REMOTE_PATH="/iptv.txt"
-          LOCAL_FILE="./iptv.txt"
           
-          if [ ! -f "$LOCAL_FILE" ]; then
-            echo "错误: 文件 $LOCAL_FILE 不存在"
-            exit 1
-          fi
-          
-          FILE_SIZE=$(stat -c%s "$LOCAL_FILE")
-          CONTENT_MD5=$(md5sum "$LOCAL_FILE" | cut -d' ' -f1)
-          DATE=$(date -u -R | sed 's/+0000/GMT/')
-          
-          URI="/${BUCKET}${REMOTE_PATH}"
-          MAC_STRING="PUT&${URI}&${DATE}&${CONTENT_MD5}"
-          SIGNATURE=$(echo -n "$MAC_STRING" | openssl sha1 -hmac "$PASSWORD_MD5" -binary | base64)
-          
-          echo "正在上传到又拍云..."
-          curl -X PUT "https://v0.api.upyun.com${URI}" \
-            -H "Host: v0.api.upyun.com" \
-            -H "Date: ${DATE}" \
-            -H "Authorization: UPYUN ${OPERATOR}:${SIGNATURE}" \
-            -H "Content-MD5: ${CONTENT_MD5}" \
-            -H "Content-Length: ${FILE_SIZE}" \
-            --data-binary "@${LOCAL_FILE}"
+          for FILE in iptv.txt iptv.m3u; do
+            if [ -f "$FILE" ]; then
+              REMOTE_PATH="/$FILE"
+              LOCAL_FILE="./$FILE"
+              FILE_SIZE=$(stat -c%s "$LOCAL_FILE")
+              CONTENT_MD5=$(md5sum "$LOCAL_FILE" | cut -d' ' -f1)
+              DATE=$(date -u -R | sed 's/+0000/GMT/')
+              URI="/${BUCKET}${REMOTE_PATH}"
+              MAC_STRING="PUT&${URI}&${DATE}&${CONTENT_MD5}"
+              SIGNATURE=$(echo -n "$MAC_STRING" | openssl sha1 -hmac "$PASSWORD_MD5" -binary | base64)
+              
+              echo "正在上传 $FILE (${FILE_SIZE} 字节)..."
+              curl -X PUT "https://v0.api.upyun.com${URI}" \
+                -H "Host: v0.api.upyun.com" \
+                -H "Date: ${DATE}" \
+                -H "Authorization: UPYUN ${OPERATOR}:${SIGNATURE}" \
+                -H "Content-MD5: ${CONTENT_MD5}" \
+                -H "Content-Length: ${FILE_SIZE}" \
+                --data-binary "@${LOCAL_FILE}"
+              echo ""
+              echo "✓ $FILE 上传完成"
+            fi
+          done
           
           echo ""
+          echo "=========================================="
           echo "上传完成！"
-          echo "CDN地址: https://${BUCKET}.test.upcdn.net${REMOTE_PATH}"
+          echo "TXT地址: https://${BUCKET}.test.upcdn.net/iptv.txt"
+          echo "M3U地址: https://${BUCKET}.test.upcdn.net/iptv.m3u"
+          echo "=========================================="
 
       - name: 显示结果预览
         run: |
-          echo "=== 生成的文件预览 ==="
-          head -40 iptv.txt
+          echo ""
+          echo "=== iptv.txt 预览（前30行）==="
+          head -30 iptv.txt
+          echo ""
+          echo "=== 测速统计 ==="
+          echo "总频道源数: $(wc -l < iptv.txt)"
+          echo "带速度标签的源数: $(grep -c 'MB/s' iptv.txt)"
+          echo ""
+          echo "=== 速度最快的10个频道 ==="
+          grep 'MB/s' iptv.txt | head -10
