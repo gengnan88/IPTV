@@ -1,0 +1,2115 @@
+{
+  "generated": "2026-06-10 09:26:02",
+  "total_channels": 169,
+  "total_urls": 466,
+  "channels": {
+    "CCTV1": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A1.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.30:5146",
+        "http://dz.mzsyt.com:7066/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV1综": {
+      "urls": [
+        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "iptv.my669.com:9901",
+        "jxx.wlzsyw.cn:9901"
+      ]
+    },
+    "CCTV2": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A2.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.31:5146",
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV3": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A3.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.32:5146",
+        "http://120.196.232.50:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226720/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV4": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A4.m3u8",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226725/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 4,
+      "sources": [
+        "iptv.my669.com:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV5": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A5.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.34:5146",
+        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226731/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 10,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV6": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A6.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.35:5146",
+        "http://120.196.232.25:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226699/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV7": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A7.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1077_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226721/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV8": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A8.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.37:5146",
+        "http://120.196.232.17:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226715/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV9": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A9.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.38:5146",
+        "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 10,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV10": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A10.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1039_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.39:5146",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226708/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV11": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A11.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1041_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226714/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV12": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A12.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.41:5146",
+        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226723/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV13": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A13.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.42:5146",
+        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226717/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV5+": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A14.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.87:5146",
+        "http://dz.mzsyt.com:7066/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "河南卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A15.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.29:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226668/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "51chuquwan.com:10133",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "河南都市": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A16.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "iptv.my669.com:9901"
+      ]
+    },
+    "北京卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A17.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1065_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.91:5146",
+        "http://120.196.232.46:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226719/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1065_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 10,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "天津卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A18.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1069_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.97:5146",
+        "http://120.196.232.41:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226686/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "东方卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A19.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.98:5146",
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226734/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "重庆卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A20.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1071_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0142_2.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.28:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226680/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "黑龙江卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A21.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.24:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226716/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "辽宁卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A22.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1060_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226689/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "河北卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A23.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226684/1.m3u8"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901"
+      ]
+    },
+    "山西卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A24.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1057_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 5,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "江苏卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A25.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1070_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.90:5146",
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226692/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "浙江卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A26.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.89:5146",
+        "http://120.196.232.22:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226690/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "安徽卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A27.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1057_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.183:5146",
+        "http://120.196.232.45:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226655/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "东南卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A28.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 5,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "江西卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A29.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226682/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "山东卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A30.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.94:5146",
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226693/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1063_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "湖北卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A31.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.95:5146",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226713/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "湖南卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A32.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0117_2.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.88:5146",
+        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226698/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "广东卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A33.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1062_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.84:5146",
+        "http://113.207.84.199/session/e3dc951a-86af-11ee-a43e-525400dfb345$h1.0$live.cbncdn.cn/pj9p9p/__cl/cg:live/__c/guangdongHD/__op/default/__f/2/a48k/index.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 9,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "深圳卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A34.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.92:5146",
+        "http://dz.mzsyt.com:7066/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 8,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "四川卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A35.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.18:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226659/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1060_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "云南卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A37.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1097_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0119_2.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.52:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226709/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "贵州卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A38.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1063_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "陕西卫视": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A39.m3u8",
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.my669.com:9901",
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "金鹰卡通": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A40.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 4,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999",
+        "shuangyashan.coccc.online:65000",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "金鹰纪实": {
+      "urls": [
+        "http://10.8.8.8:8008/paiptv/A41.m3u8",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1096_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "iptv.my669.com:9901",
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "CCTV4国际": {
+      "urls": [
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.33:5146"
+      ],
+      "count": 4,
+      "sources": [
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "i2.ekesh.cn:9999"
+      ]
+    },
+    "CCTV7军农": {
+      "urls": [
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.36:5146"
+      ],
+      "count": 3,
+      "sources": [
+        "iptv.zhonghenginfo.cn:8989",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999"
+      ]
+    },
+    "CCTV14": {
+      "urls": [
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://51chuquwan.com:10133/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.43:5146",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226645/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 7,
+      "sources": [
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "51chuquwan.com:10133",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV15": {
+      "urls": [
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://16.0.0.1:4001/rtp/239.77.0.44:5146",
+        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226648/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 6,
+      "sources": [
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "i2.ekesh.cn:9999",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "吉林卫视": {
+      "urls": [
+        "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 5,
+      "sources": [
+        "iptv.zhonghenginfo.cn:8989",
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "礼宴中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/yxxdpf_1/index.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "demo.ruijingnet.com:2001"
+      ]
+    },
+    "会议中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/taishan03_1/index.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "demo.ruijingnet.com:2001"
+      ]
+    },
+    "商务中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "demo.ruijingnet.com:2001"
+      ]
+    },
+    "湖南经视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南都市": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "潇湘电影": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南电视剧": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南爱晚": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南教育": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南娱乐": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湖南导视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "怀化综合": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "怀化公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "溆浦时政": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "辰溪综合": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1110_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "重温经典": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "CHC精彩影院": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1072_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "欢笑剧场": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "都市剧场": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "CCTV17": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8"
+      ],
+      "count": 3,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "fujuniptv.cn:9901"
+      ]
+    },
+    "动漫剧场": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "卡酷动画": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "宁乡戏曲": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1076_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "内蒙古卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 3,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "西藏卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 3,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "兵团卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0115_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "新疆卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 3,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "宁夏卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 3,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "旅游卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "青海卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "甘肃卫视": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1098_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://tpc.x3322.net:9901/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "山东教育": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 2,
+      "sources": [
+        "hunhhyd.sohu.blog:9999",
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "魅力足球": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1037_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "长沙综合": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1087_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "株洲台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1122_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "衡阳台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1120_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "衡阳公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1094_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "郴州台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1121_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "郴州公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1090_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "永州台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1123_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "永州公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1081_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "娄底台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1124_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "娄底公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1086_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "邵阳台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1125_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "邵阳公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1091_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "常德台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1126_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "常德公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1085_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "张家界": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1127_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "张家界公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1089_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湘西台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1128_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湘西公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1084_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "岳阳台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1129_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "岳阳公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1135_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "益阳台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1130_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "益阳公共": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1132_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "湘潭台": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1131_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "芷江综合": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1073_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "靖州综合": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1108_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "游戏风云": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "劲爆体育": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "先锋乒羽": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "快乐购": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "快乐垂钓": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "书画": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "天元围棋": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1082_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "全纪实": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "法制天地": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "生活时尚": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1092_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "东方财经": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1093_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "中央气象": {
+      "urls": [
+        "http://hunhhyd.sohu.blog:9999/tsfile/live/1088_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "hunhhyd.sohu.blog:9999"
+      ]
+    },
+    "CCTV16": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "广西卫视": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226681/1.m3u8",
+        "http://dz.mzsyt.com:7066/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 3,
+      "sources": [
+        "tpc.x3322.net:9901",
+        "fujuniptv.cn:9901",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "海南卫视": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/0114_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "三沙卫视": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林都市": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林综艺": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林影视": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林生活": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林乡村": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "长影": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "吉林教育": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "延边卫视": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "松原": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "松原公共": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "tpc.x3322.net:9901"
+      ]
+    },
+    "CCTV少儿": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "CCTV音乐": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江影视": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江文体": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江都市": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江新闻法治": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江公共": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "黑龙江少儿": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "卡酷少儿": {
+      "urls": [
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1,
+      "sources": [
+        "shuangyashan.coccc.online:65000"
+      ]
+    },
+    "广东珠江": {
+      "urls": [
+        "http://16.0.0.1:4001/rtp/239.77.0.1:5146",
+        "http://dz.mzsyt.com:7066/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 2,
+      "sources": [
+        "i2.ekesh.cn:9999",
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CCTV1ZUBOTEST": {
+      "urls": [
+        "http://120.196.232.19:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226737/1.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "fujuniptv.cn:9901"
+      ]
+    },
+    "CCTVNEWS": {
+      "urls": [
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226825/1.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "fujuniptv.cn:9901"
+      ]
+    },
+    "CCTV5＋": {
+      "urls": [
+        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226711/1.m3u8"
+      ],
+      "count": 1,
+      "sources": [
+        "fujuniptv.cn:9901"
+      ]
+    },
+    "五华台": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "梅州1": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "梅州2": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "山歌": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "翡翠台": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "TVB星河": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "广东新闻": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "广东公共": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "广东体育": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 2,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "经济科教": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1069_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 2,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "南方卫视": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "南方五": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "嘉佳卡通": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "少儿卫视": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "深圳少儿": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "广东南方购物": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "凤凰中文": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "凤凰资讯": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1037_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CHC电影": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "CETV1": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1039_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "深圳宝安": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "谍战剧场": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1041_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "深圳都市": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "天映": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "惠州1": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    },
+    "兵团卫": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1062_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1,
+      "sources": [
+        "dz.mzsyt.com:7066"
+      ]
+    }
+  }
+}
