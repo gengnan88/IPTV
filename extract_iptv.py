@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-IPTV直播源域名提取工具 - 剔除内网IP版本
+IPTV直播源域名提取工具 - CCTV排序版本
 """
 
 import requests
@@ -44,27 +44,40 @@ DOMAINS = [
     "http://i2.ekesh.cn:9999/",
 ]
 
+# ============== CCTV排序规则 ==============
+# CCTV1-17的正确顺序
+CCTV_ORDER = {
+    'CCTV1': 1, 'CCTV2': 2, 'CCTV3': 3, 'CCTV4': 4, 'CCTV5': 5,
+    'CCTV5+': 6,  # 5+放在5之后
+    'CCTV6': 7, 'CCTV7': 8, 'CCTV8': 9, 'CCTV9': 10,
+    'CCTV10': 11, 'CCTV11': 12, 'CCTV12': 13, 'CCTV13': 14,
+    'CCTV14': 15, 'CCTV15': 16, 'CCTV16': 17, 'CCTV17': 18,
+    'CGTN': 19, 'CGTN纪录': 20, 'CCTV4K': 21,
+}
+
+# 其他频道排序规则
+WEISHI_ORDER = [
+    '湖南卫视', '浙江卫视', '江苏卫视', '东方卫视', '北京卫视', '深圳卫视',
+    '广东卫视', '山东卫视', '辽宁卫视', '安徽卫视', '天津卫视', '重庆卫视',
+    '河南卫视', '湖北卫视', '江西卫视', '黑龙江卫视', '四川卫视', '云南卫视',
+    '贵州卫视', '陕西卫视', '甘肃卫视', '青海卫视', '宁夏卫视', '新疆卫视',
+    '西藏卫视', '内蒙古卫视', '广西卫视', '海南卫视', '东南卫视', '兵团卫视',
+    '河北卫视', '山西卫视', '吉林卫视', '福建卫视', '旅游卫视', '金鹰卡通',
+    '卡酷少儿', '嘉佳卡通', '优漫卡通'
+]
+
 # ============== 内网IP段定义 ==============
 PRIVATE_IP_RANGES = [
-    # A类内网
     ipaddress.ip_network('10.0.0.0/8'),
-    # B类内网
     ipaddress.ip_network('172.16.0.0/12'),
-    # C类内网
     ipaddress.ip_network('192.168.0.0/16'),
-    # 回环地址
     ipaddress.ip_network('127.0.0.0/8'),
-    # APIPA地址
     ipaddress.ip_network('169.254.0.0/16'),
-    # 组播地址
     ipaddress.ip_network('224.0.0.0/4'),
-    # 保留地址
     ipaddress.ip_network('240.0.0.0/4'),
-    # 广播地址
     ipaddress.ip_network('255.255.255.255/32'),
 ]
 
-# 内网IP前缀（快速过滤）
 PRIVATE_IP_PREFIXES = (
     '10.', '127.', '169.254.', '172.16.', '172.17.', '172.18.', '172.19.',
     '172.20.', '172.21.', '172.22.', '172.23.', '172.24.', '172.25.', '172.26.',
@@ -75,36 +88,24 @@ PRIVATE_IP_PREFIXES = (
     '251.', '252.', '253.', '254.', '255.', '0.0.0.0',
 )
 
-# 已知的有效公网IP段（河南地区常用）
-PUBLIC_IP_RANGES = [
-    '1.', '39.', '42.', '61.', '106.', '115.', '123.', '125.', '171.', '182.', '219.', '221.', '222.'
-]
-
 # ============== IP判断函数 ==============
 def is_private_ip(ip_str):
     """判断IP是否为内网IP"""
     if not ip_str:
         return True
     
-    # 快速前缀检查
     for prefix in PRIVATE_IP_PREFIXES:
         if ip_str.startswith(prefix):
             return True
     
     try:
         ip = ipaddress.ip_address(ip_str)
-        # 检查是否在已知内网段中
         for network in PRIVATE_IP_RANGES:
             if ip in network:
                 return True
         return False
     except ValueError:
-        # 不是有效IP地址（可能是域名），暂时放行
         return False
-
-def is_valid_public_ip(ip_str):
-    """判断是否为有效的公网IP"""
-    return not is_private_ip(ip_str)
 
 def extract_ip_from_url(url):
     """从URL中提取IP地址"""
@@ -117,26 +118,8 @@ def is_valid_stream_url(url):
     """判断流URL是否有效（非内网）"""
     ip = extract_ip_from_url(url)
     if ip:
-        return is_valid_public_ip(ip)
-    # 域名地址，暂时放行
+        return not is_private_ip(ip)
     return True
-
-def is_private_domain(domain_url):
-    """判断域名是否指向内网IP"""
-    try:
-        import socket
-        # 提取域名
-        parsed = urlparse(domain_url)
-        hostname = parsed.hostname
-        if not hostname:
-            return True
-        
-        # 尝试解析域名
-        ip = socket.gethostbyname(hostname)
-        return is_private_ip(ip)
-    except:
-        # 解析失败，保留（可能是临时故障）
-        return False
 
 # ============== 工具函数 ==============
 def clean_domain(domain):
@@ -197,7 +180,7 @@ def get_channel_group(name):
               '山东', '辽宁', '安徽', '天津', '重庆', '河南', '湖北', '江西',
               '黑龙江', '四川', '云南', '贵州', '陕西', '甘肃', '青海', '宁夏',
               '新疆', '西藏', '内蒙古', '广西', '海南', '东南', '兵团', '河北',
-              '山西', '吉林', '福建', '旅游', '纪实', '卡通', '少儿')
+              '山西', '吉林', '福建')
     if any(w in name for w in weishi):
         return '卫视频道'
     
@@ -207,6 +190,31 @@ def get_channel_group(name):
         return '港澳台频道'
     
     return '其他频道'
+
+def get_channel_sort_key(name, group):
+    """获取频道排序键值"""
+    if group == '央视频道':
+        # CCTV频道按数字排序
+        if name in CCTV_ORDER:
+            return CCTV_ORDER[name]
+        # 提取数字
+        match = re.search(r'CCTV(\d+)', name)
+        if match:
+            num = int(match.group(1))
+            if num <= 17:
+                return num
+            return 100 + num
+        return 999
+    
+    elif group == '卫视频道':
+        # 卫视按预设顺序排序
+        if name in WEISHI_ORDER:
+            return WEISHI_ORDER.index(name)
+        return 1000
+    
+    else:
+        # 其他分组按字母排序
+        return name
 
 # ============== 提取函数 ==============
 def fetch_from_domain(domain_url):
@@ -243,7 +251,6 @@ def fetch_from_domain(domain_url):
                                     else:
                                         full_url = base_url + '/' + url_path
                                 
-                                # 检查是否为内网IP
                                 if is_valid_stream_url(full_url):
                                     results.append({
                                         'name': clean_name,
@@ -280,16 +287,14 @@ def fetch_from_domain(domain_url):
 def fetch_all():
     """从所有域名获取频道"""
     print('=' * 60)
-    print('IPTV直播源域名提取工具 - 剔除内网IP')
+    print('IPTV直播源域名提取工具')
     print(f'运行时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     print('=' * 60)
     
-    # 内网IP说明
     print('\n📌 过滤规则:')
     print('   - 内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x')
     print('   - 回环地址: 127.x.x.x')
     print('   - 组播地址: 224.x.x.x-239.x.x.x')
-    print('   - 保留地址: 240.x.x.x-255.x.x.x')
     
     domains = [clean_domain(d) for d in DOMAINS]
     print(f'\n📡 待提取域名: {len(domains)} 个\n')
@@ -334,16 +339,6 @@ def save_results(channels):
     
     print(f'   去重后: {len(unique)} 个')
     
-    # 统计内网剔除情况
-    private_count = 0
-    for ch in channels:
-        ip = extract_ip_from_url(ch['url'])
-        if ip and is_private_ip(ip):
-            private_count += 1
-    
-    if private_count > 0:
-        print(f'   剔除内网源: {private_count} 个')
-    
     # 创建输出目录
     os.makedirs('output', exist_ok=True)
     
@@ -352,6 +347,10 @@ def save_results(channels):
     for ch in unique:
         groups[get_channel_group(ch['name'])].append(ch)
     
+    # 在每个分组内排序
+    for group in groups:
+        groups[group].sort(key=lambda x: get_channel_sort_key(x['name'], group))
+    
     group_order = ['央视频道', '卫视频道', '港澳台频道', '其他频道']
     
     # 保存M3U
@@ -359,21 +358,13 @@ def save_results(channels):
         f.write('#EXTM3U\n')
         f.write(f'# 生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
         f.write(f'# 频道数量: {len(unique)}\n')
-        f.write(f'# 过滤规则: 已剔除内网IP、组播IP、保留IP\n\n')
+        f.write(f'# 排序规则: CCTV1-17顺序排列\n\n')
         
         for group in group_order:
             if group not in groups:
                 continue
             
             ch_list = groups[group]
-            
-            if group == '央视频道':
-                def sort_key(c):
-                    match = re.search(r'CCTV(\d+)', c['name'])
-                    return int(match.group(1)) if match else 999
-                ch_list.sort(key=sort_key)
-            else:
-                ch_list.sort(key=lambda x: x['name'])
             
             for ch in ch_list:
                 f.write(f'#EXTINF:-1 group-title="{group}",{ch["name"]}\n')
@@ -387,26 +378,36 @@ def save_results(channels):
         if ch['url'] not in channel_urls[ch['name']]:
             channel_urls[ch['name']].append(ch['url'])
     
+    # 按排序规则输出TXT
     with open('output/iptv.txt', 'w', encoding='utf-8') as f:
         f.write(f'# IPTV直播源\n')
         f.write(f'# 生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
         f.write(f'# 频道数量: {len(channel_urls)}\n')
-        f.write(f'# 过滤规则: 已剔除内网IP、组播IP、保留IP\n\n')
+        f.write(f'# 排序规则: CCTV1-17顺序排列\n\n')
         
-        for name in sorted(channel_urls.keys()):
-            combined = '#'.join(channel_urls[name])
-            f.write(f'{name},{combined}\n')
+        # 按分组顺序输出
+        for group in group_order:
+            if group not in groups:
+                continue
+            
+            ch_list = groups[group]
+            
+            for ch in ch_list:
+                name = ch['name']
+                urls = channel_urls[name]
+                combined = '#'.join(urls)
+                f.write(f'{name},{combined}\n')
     
     print(f'✅ 已保存: output/iptv.txt')
     
     # 保存JSON
     json_data = {
         'generated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'sort_rules': 'CCTV1-17顺序排列',
         'filter_rules': [
             '内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x',
             '回环地址: 127.x.x.x',
-            '组播地址: 224.x.x.x-239.x.x.x',
-            '保留地址: 240.x.x.x-255.x.x.x'
+            '组播地址: 224.x.x.x-239.x.x.x'
         ],
         'total_channels': len(unique),
         'channels': {}
@@ -429,23 +430,12 @@ def save_results(channels):
         if count > 0:
             print(f'   {group}: {count} 个')
     
-    # 保存过滤报告
-    with open('output/filter_report.txt', 'w', encoding='utf-8') as f:
-        f.write('=' * 60 + '\n')
-        f.write('内网IP过滤报告\n')
-        f.write('=' * 60 + '\n\n')
-        f.write(f'生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n\n')
-        f.write('过滤规则:\n')
-        f.write('  1. 内网IP: 10.0.0.0/8\n')
-        f.write('  2. 内网IP: 172.16.0.0/12\n')
-        f.write('  3. 内网IP: 192.168.0.0/16\n')
-        f.write('  4. 回环地址: 127.0.0.0/8\n')
-        f.write('  5. APIPA地址: 169.254.0.0/16\n')
-        f.write('  6. 组播地址: 224.0.0.0/4\n')
-        f.write('  7. 保留地址: 240.0.0.0/4\n\n')
-        f.write(f'最终保留频道: {len(unique)} 个\n')
-    
-    print(f'✅ 已保存过滤报告: output/filter_report.txt')
+    # 显示CCTV排序预览
+    cctv_channels = [ch['name'] for ch in groups.get('央视频道', [])]
+    if cctv_channels:
+        print(f'\n📺 CCTV频道排序预览:')
+        for i, name in enumerate(cctv_channels[:20], 1):
+            print(f'   {i:2}. {name}')
     
     return True
 
