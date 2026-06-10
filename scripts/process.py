@@ -249,10 +249,8 @@ def main():
                 continue
             f.write(f"{category},#genre#\n")
             for name, url, speed in channels:
-                if speed > 0:
-                    f.write(f"{name} [{speed:.1f}MB/s],{url}\n")
-                else:
-                    f.write(f"{name},{url}\n")
+              
+            f.write(f"{name},{url}\n")
             f.write("\n")
     
     # 生成 M3U 文件
@@ -261,10 +259,8 @@ def main():
         for category in ["央视频道", "卫视频道", "其他频道"]:
             channels = grouped[category]
             for name, url, speed in channels:
-                if speed > 0:
-                    f.write(f'#EXTINF:-1 group-title="{category}",{name} [{speed:.1f}MB/s]\n')
-                else:
-                    f.write(f'#EXTINF:-1 group-title="{category}",{name}\n')
+                
+                f.write(f'#EXTINF:-1 group-title="{category}",{name}\n')
                 f.write(f'{url}\n')
     
     print("=" * 60)
