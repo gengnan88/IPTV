@@ -1,0 +1,71 @@
+name: IPTV直播源提取
+
+on:
+  schedule:
+    # 每天凌晨2点自动运行
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # 支持手动触发
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'domain_sources.txt'
+      - 'extract_iptv.py'
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+    
+    - name: 设置Python环境
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: 安装依赖
+      run: |
+        pip install requests
+        pip install beautifulsoup4
+    
+    - name: 创建输出目录
+      run: mkdir -p output
+    
+    - name: 运行提取脚本
+      run: python extract_iptv.py
+    
+    - name: 上传结果文件
+      uses: actions/upload-artifact@v4
+      with:
+        name: iptv-sources
+        path: output/
+        retention-days: 7
+    
+    - name: 部署到GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
+        publish_branch: gh-pages
+        destination_dir: .
+        keep_files: false
+    
+    - name: 创建发布
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: iptv-latest
+        name: "IPTV直播源 - ${{ github.run_number }}"
+        body: |
+          ## 更新时间
+          ${{ github.event.head_commit.timestamp }}
+          
+          ## 文件说明
+          - `iptv_domain.m3u` - M3U格式直播源
+          - `iptv_domain.txt` - TXT格式直播源
+          - `iptv_domain.json` - JSON格式详细数据
+        files: |
+          output/iptv_domain.m3u
+          output/iptv_domain.txt
+          output/iptv_domain.json
+      continue-on-error: true
