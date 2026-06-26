@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-25 11:18:27",
+  "generated": "2026-06-26 11:34:30",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
@@ -31,11 +31,11 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 8
     },
@@ -44,10 +44,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.50:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226720/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.50:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226720/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -55,10 +55,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226725/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226725/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -77,10 +77,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.25:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226699/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.25:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226699/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -89,10 +89,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.17:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226715/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.17:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226715/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -101,12 +101,12 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 9
     },
@@ -115,10 +115,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226708/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226708/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -126,10 +126,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226714/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226714/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -138,10 +138,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226723/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226723/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -150,10 +150,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226717/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226717/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -162,9 +162,9 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1057_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226645/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://dz.mzsyt.com:7066/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://120.196.232.27:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226645/1.m3u8"
+        "http://dz.mzsyt.com:7066/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 6
     },
@@ -172,18 +172,18 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226648/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://dz.mzsyt.com:7066/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226648/1.m3u8"
+        "http://dz.mzsyt.com:7066/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 5
     },
     "CCTV17": {
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8"
+        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8",
+        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 4
     },
@@ -191,10 +191,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1060_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.29:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226668/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://dz.mzsyt.com:7066/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://120.196.232.29:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226668/1.m3u8"
+        "http://dz.mzsyt.com:7066/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 6
     },
@@ -275,10 +275,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1073_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226734/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226734/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -287,10 +287,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226692/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226692/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -299,11 +299,11 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.46:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226719/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://dz.mzsyt.com:7066/tsfile/live/1065_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.46:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226719/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 8
     },
@@ -312,10 +312,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1076_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://113.207.84.199/session/e3dc951a-86af-11ee-a43e-525400dfb345$h1.0$live.cbncdn.cn/pj9p9p/__cl/cg:live/__c/guangdongHD/__op/default/__f/2/a48k/index.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://113.207.84.199/session/e3dc951a-86af-11ee-a43e-525400dfb345$h1.0$live.cbncdn.cn/pj9p9p/__cl/cg:live/__c/guangdongHD/__op/default/__f/2/a48k/index.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -324,10 +324,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1077_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.24:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226716/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.24:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226716/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -336,10 +336,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1078_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226693/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1063_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226693/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -348,10 +348,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1079_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.45:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226655/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.45:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226655/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -360,10 +360,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1080_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226689/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.21:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226689/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -391,9 +391,9 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1083_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226684/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226684/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 5
     },
@@ -401,10 +401,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1084_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226682/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.38:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226682/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -413,10 +413,10 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1085_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226698/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0117_2.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226698/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -435,10 +435,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1087_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.18:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226659/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1060_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.18:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226659/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -446,10 +446,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1088_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226713/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226713/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -457,20 +457,20 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1089_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.41:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226686/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.41:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226686/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
     "云南卫视": {
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1090_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.52:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226709/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0119_2.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.52:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226709/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 5
     },
@@ -478,10 +478,10 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1091_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.28:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226680/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0142_2.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.28:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226680/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -537,11 +537,11 @@
       "urls": [
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226731/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://dz.mzsyt.com:7066/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226731/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 7
     },
@@ -549,10 +549,10 @@
       "urls": [
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226721/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.31:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226721/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -560,10 +560,10 @@
       "urls": [
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.22:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226690/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.22:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226690/1.m3u8"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 6
     },
@@ -610,19 +610,37 @@
       ],
       "count": 1
     },
-    "CCTV16": {
+    "CCTV1ZUBOTEST": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://120.196.232.19:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226737/1.m3u8"
+      ],
+      "count": 1
+    },
+    "CCTVNEWS": {
+      "urls": [
+        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226825/1.m3u8"
+      ],
+      "count": 1
+    },
+    "CCTV5＋": {
+      "urls": [
+        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226711/1.m3u8"
       ],
       "count": 1
     },
     "广西卫视": {
       "urls": [
+        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226681/1.m3u8",
         "http://tpc.x3322.net:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://dz.mzsyt.com:7066/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&down=1",
-        "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226681/1.m3u8"
+        "http://dz.mzsyt.com:7066/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
+    },
+    "CCTV16": {
+      "urls": [
+        "http://tpc.x3322.net:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1
     },
     "海南卫视": {
       "urls": [
@@ -944,24 +962,6 @@
     "山东教育": {
       "urls": [
         "http://shuangyashan.coccc.online:65000/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0"
-      ],
-      "count": 1
-    },
-    "CCTV1ZUBOTEST": {
-      "urls": [
-        "http://120.196.232.19:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226737/1.m3u8"
-      ],
-      "count": 1
-    },
-    "CCTVNEWS": {
-      "urls": [
-        "http://120.196.232.15:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226825/1.m3u8"
-      ],
-      "count": 1
-    },
-    "CCTV5＋": {
-      "urls": [
-        "http://120.196.232.51:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226711/1.m3u8"
       ],
       "count": 1
     }
