@@ -1,20 +1,13 @@
 {
-  "generated": "2026-07-01 12:18:26",
+  "generated": "2026-07-02 11:04:45",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
     "回环地址: 127.x.x.x",
     "组播地址: 224.x.x.x-239.x.x.x"
   ],
-  "total_channels": 347,
+  "total_channels": 345,
   "channels": {
-    "CCTV1综": {
-      "urls": [
-        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
-      ],
-      "count": 2
-    },
     "CCTV1": {
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0",
@@ -31,11 +24,11 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8",
-        "http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 8
     },
@@ -101,12 +94,12 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://51chuquwan.com:10133/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8",
-        "http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 9
     },
@@ -181,9 +174,9 @@
     "CCTV17": {
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8",
-        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 4
     },
@@ -533,24 +526,6 @@
       ],
       "count": 1
     },
-    "礼宴中心直播": {
-      "urls": [
-        "http://gcbsc.v.live.baishancdnx.cn/gc/yxxdpf_1/index.m3u8"
-      ],
-      "count": 1
-    },
-    "会议中心直播": {
-      "urls": [
-        "http://gcbsc.v.live.baishancdnx.cn/gc/taishan03_1/index.m3u8"
-      ],
-      "count": 1
-    },
-    "商务中心直播": {
-      "urls": [
-        "http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8"
-      ],
-      "count": 1
-    },
     "CCTV5": {
       "urls": [
         "http://iptv.zhonghenginfo.cn:8989/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
@@ -609,6 +584,24 @@
         "http://tpc.x3322.net:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 3
+    },
+    "礼宴中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/yxxdpf_1/index.m3u8"
+      ],
+      "count": 1
+    },
+    "会议中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/taishan03_1/index.m3u8"
+      ],
+      "count": 1
+    },
+    "商务中心直播": {
+      "urls": [
+        "http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8"
+      ],
+      "count": 1
     },
     "CCTV少儿": {
       "urls": [

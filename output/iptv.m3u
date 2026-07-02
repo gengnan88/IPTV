@@ -1,14 +1,10 @@
 #EXTM3U
-# 生成时间: 2026-07-01 12:18:26
-# 频道数量: 347
+# 生成时间: 2026-07-02 11:04:45
+# 频道数量: 345
 # 排序规则: CCTV1-17顺序排列
 
-#EXTINF:-1 group-title="央视频道",CCTV1综
-http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://ozxz.cncnnc.com:9901/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV1综
-http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://iptv.zhonghenginfo.cn:8989/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1
@@ -28,6 +24,8 @@ http://iptv.zhonghenginfo.cn:8989/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://51chuquwan.com:10133/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV2
+http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV2
 http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1
@@ -35,8 +33,6 @@ http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1
 http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV3
 http://ozxz.cncnnc.com:9901/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV3
@@ -136,6 +132,8 @@ http://iptv.zhonghenginfo.cn:8989/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://51chuquwan.com:10133/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV9
+http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV9
 http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1
@@ -145,8 +143,6 @@ http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1
 http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV10
 http://ozxz.cncnnc.com:9901/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV10
@@ -228,11 +224,11 @@ http://tpc.x3322.net:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV17
 http://ozxz.cncnnc.com:9901/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV17
+http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV17
 http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV17
 http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV17
-http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV少儿
 http://shuangyashan.coccc.online:65000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV音乐
