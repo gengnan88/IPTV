@@ -1,12 +1,12 @@
 #EXTM3U
-# 生成时间: 2026-07-31 04:14:51
+# 生成时间: 2026-08-01 04:14:04
 # 频道数量: 221
 # 排序规则: CCTV1-17顺序排列
 
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://ozxz.cncnnc.com:9901/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1综
 http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://ozxz.cncnnc.com:9901/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1综
 http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1
@@ -20,9 +20,9 @@ http://ozxz.cncnnc.com:9901/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV2
-http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV2
 http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1
+#EXTINF:-1 group-title="央视频道",CCTV2
+http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV3
@@ -82,11 +82,11 @@ http://ozxz.cncnnc.com:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV9
-http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV9
 http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1
+#EXTINF:-1 group-title="央视频道",CCTV9
+http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV9
 http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV10

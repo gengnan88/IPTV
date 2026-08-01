@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31 04:14:51",
+  "generated": "2026-08-01 04:14:04",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
@@ -8,6 +8,13 @@
   ],
   "total_channels": 221,
   "channels": {
+    "CCTV1综": {
+      "urls": [
+        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
+      ],
+      "count": 2
+    },
     "CCTV1": {
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&authid=0",
@@ -20,8 +27,8 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8"
       ],
       "count": 5
@@ -73,9 +80,9 @@
       "urls": [
         "http://ozxz.cncnnc.com:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1",
         "http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8"
       ],
       "count": 6
@@ -429,13 +436,6 @@
         "http://ozxz.cncnnc.com:9901/tsfile/live/1111_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 1
-    },
-    "CCTV1综": {
-      "urls": [
-        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
-      ],
-      "count": 2
     },
     "礼宴中心直播": {
       "urls": [
