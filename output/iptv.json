@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-09 05:24:57",
+  "generated": "2026-09-10 05:23:04",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
     "回环地址: 127.x.x.x",
     "组播地址: 224.x.x.x-239.x.x.x"
   ],
-  "total_channels": 212,
+  "total_channels": 222,
   "channels": {
     "CCTV1综": {
       "urls": [
@@ -26,21 +26,23 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0125_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "广东新闻": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1028_1.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1028_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 1
+      "count": 2
     },
     "南方卫视": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1033_1.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1033_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 1
+      "count": 2
     },
     "广东影视": {
       "urls": [
@@ -57,9 +59,11 @@
     "广东体育": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1036_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://www.kingtom-tech.com:9902/tsfile/live/1063_1.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1063_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 2
+      "count": 4
     },
     "广东经济科教": {
       "urls": [
@@ -70,31 +74,32 @@
     },
     "翡翠台": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 1
+      "count": 2
     },
     "CCTV1": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "CCTV2": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
     "CCTV5+": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0016_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 2
     },
@@ -102,24 +107,25 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0007_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "CCTV9": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1075_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 4
+      "count": 5
     },
     "CCTV10": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0010_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -127,7 +133,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0012_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -135,7 +141,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0014_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/0014_2.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -144,7 +150,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1046_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1090_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0117_2.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1044_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -153,7 +159,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1047_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1091_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -161,7 +167,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1048_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1046_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -170,16 +176,17 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1049_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1094_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1050_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1065_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 4
+      "count": 5
     },
     "深圳卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1050_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1098_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0126_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -188,7 +195,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1051_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1101_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1049_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -197,7 +204,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1052_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1099_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1053_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -206,7 +213,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1053_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1095_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0135_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1067_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -215,7 +222,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1054_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1096_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0131_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1063_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -224,7 +231,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1055_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1092_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1047_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -233,7 +240,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1057_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1100_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1051_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -241,7 +248,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1058_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0142_2.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1066_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -250,7 +257,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1059_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1093_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0130_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1059_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -259,7 +266,7 @@
         "http://www.kingtom-tech.com:9902/tsfile/live/1060_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/1102_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1052_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 4
     },
@@ -284,9 +291,10 @@
     },
     "嘉佳卡通": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1069_1.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1069_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 1
+      "count": 2
     },
     "南方购物": {
       "urls": [
@@ -304,7 +312,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0004_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -324,7 +332,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -332,7 +340,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0013_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -340,7 +348,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0015_2.m3u8?key=txiptv&playlive=0&authid=0",
         "http://www.kingtom-tech.com:9902/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -354,7 +362,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1097_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -362,53 +370,52 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1103_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1060_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "河南卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1104_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1064_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 2
+      "count": 3
     },
     "云南卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1105_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0119_2.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1056_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "东南卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1106_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 3
+      "count": 2
     },
     "广西卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1107_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1054_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 2
     },
     "吉林卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1108_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0116_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 3
+      "count": 2
     },
     "陕西卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1109_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -416,7 +423,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1110_1.m3u8?key=txiptv&playlive=0&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1057_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -428,10 +435,9 @@
     },
     "青海卫视": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1112_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0140_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1112_1.m3u8?key=txiptv&playlive=0&authid=0"
       ],
-      "count": 2
+      "count": 1
     },
     "旅游卫视": {
       "urls": [
@@ -442,40 +448,35 @@
     "宁夏卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1114_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0112_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 3
+      "count": 2
     },
     "西藏卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1115_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 3
+      "count": 2
     },
     "新疆卫视": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1116_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0110_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 3
+      "count": 2
     },
     "甘肃卫视": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1117_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0141_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1117_1.m3u8?key=txiptv&playlive=0&authid=0"
       ],
-      "count": 2
+      "count": 1
     },
     "兵团卫视": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1118_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0115_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1118_1.m3u8?key=txiptv&playlive=0&authid=0"
       ],
-      "count": 2
+      "count": 1
     },
     "卡酷动画": {
       "urls": [
@@ -486,15 +487,17 @@
     "金鹰卡通": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/1120_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://shuangyashan.coccc.online:65000/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 2
+      "count": 3
     },
     "CETV1": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1122_1.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1122_1.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://dz.mzsyt.com:7066/tsfile/live/1039_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 1
+      "count": 2
     },
     "山东教育卫视": {
       "urls": [
@@ -518,15 +521,16 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
-      "count": 3
+      "count": 4
     },
     "CCTV3": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -534,7 +538,7 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
@@ -542,16 +546,15 @@
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 3
     },
     "海南卫视": {
       "urls": [
-        "http://www.kingtom-tech.com:9902/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0114_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://www.kingtom-tech.com:9902/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 2
+      "count": 1
     },
     "凤凰台": {
       "urls": [
@@ -574,6 +577,12 @@
     "商务中心直播": {
       "urls": [
         "http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8"
+      ],
+      "count": 1
+    },
+    "CCTV17": {
+      "urls": [
+        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
       "count": 1
     },
@@ -639,94 +648,140 @@
     },
     "内蒙古卫视": {
       "urls": [
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0109_1.m3u8?key=txiptv&playlive=1&authid=0"
       ],
-      "count": 2
+      "count": 1
     },
     "河北卫视": {
       "urls": [
-        "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://tpc.x3322.net:9901/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0"
+      ],
+      "count": 1
+    },
+    "五华台": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "梅州1": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "梅州2": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "山歌": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "TVB星河": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "广东珠江": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "广东公共": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "经济科教": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&down=1",
+        "http://dz.mzsyt.com:7066/tsfile/live/1069_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 2
     },
-    "CCTV16": {
+    "南方五": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1061_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "CCTV17": {
+    "少儿卫视": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0"
-      ],
-      "count": 2
-    },
-    "三沙卫视": {
-      "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/0142_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林都市": {
+    "深圳少儿": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林综艺": {
+    "广东南方购物": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林影视": {
+    "凤凰中文": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林生活": {
+    "凤凰资讯": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1037_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林乡村": {
+    "CHC电影": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "长影": {
+    "深圳宝安": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1040_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "吉林教育": {
+    "谍战剧场": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1041_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "延边卫视": {
+    "深圳都市": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1042_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "松原": {
+    "天映": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     },
-    "松原公共": {
+    "惠州1": {
       "urls": [
-        "http://tpc.x3322.net:9901/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0"
+        "http://dz.mzsyt.com:7066/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&down=1"
+      ],
+      "count": 1
+    },
+    "兵团卫": {
+      "urls": [
+        "http://dz.mzsyt.com:7066/tsfile/live/1062_1.m3u8?key=txiptv&playlive=1&down=1"
       ],
       "count": 1
     }
