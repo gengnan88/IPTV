@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19 05:12:27",
+  "generated": "2026-09-20 05:29:33",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
@@ -84,8 +84,8 @@
     "CCTV2": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0002_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.54:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226739/1.m3u8"
       ],
       "count": 4
@@ -107,8 +107,8 @@
     "CCTV9": {
       "urls": [
         "http://www.kingtom-tech.com:9902/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://shuangyashan.coccc.online:65000/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://sykj1.3322.org:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.36:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226651/1.m3u8"
       ],
       "count": 4
@@ -562,13 +562,6 @@
       ],
       "count": 1
     },
-    "CCTV17": {
-      "urls": [
-        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0",
-        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8"
-      ],
-      "count": 2
-    },
     "CCTV少儿": {
       "urls": [
         "http://shuangyashan.coccc.online:65000/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0"
@@ -639,6 +632,13 @@
       "urls": [
         "http://shuangyashan.coccc.online:65000/tsfile/live/0117_1.m3u8?key=txiptv&playlive=1&authid=0",
         "http://120.196.232.55:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226684/1.m3u8"
+      ],
+      "count": 2
+    },
+    "CCTV17": {
+      "urls": [
+        "http://sykj1.3322.org:9901/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0",
+        "http://120.196.232.43:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226727/1.m3u8"
       ],
       "count": 2
     },
