@@ -1,12 +1,12 @@
 #EXTM3U
-# 生成时间: 2026-10-09 06:50:07
+# 生成时间: 2026-10-10 06:28:22
 # 频道数量: 259
 # 排序规则: CCTV1-17顺序排列
 
 #EXTINF:-1 group-title="央视频道",CCTV1综
-http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 group-title="央视频道",CCTV1综
 http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 group-title="央视频道",CCTV1综
+http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 group-title="央视频道",CCTV1ZUBOTEST
 http://120.196.232.19:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226737/1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1

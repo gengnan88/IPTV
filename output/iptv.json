@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09 06:50:07",
+  "generated": "2026-10-10 06:28:22",
   "sort_rules": "CCTV1-17顺序排列",
   "filter_rules": [
     "内网IP: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x",
@@ -10,8 +10,8 @@
   "channels": {
     "CCTV1综": {
       "urls": [
-        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
-        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
+        "http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0",
+        "http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0"
       ],
       "count": 2
     },

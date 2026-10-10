@@ -1,10 +1,10 @@
 # IPTV直播源
-# 生成时间: 2026-10-09 06:50:07
+# 生成时间: 2026-10-10 06:28:22
 # 频道数量: 114
 # 排序规则: CCTV1-17顺序排列
 
-CCTV1综,http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
-CCTV1综,http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
+CCTV1综,http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
+CCTV1综,http://iptv.my669.com:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://jxx.wlzsyw.cn:9901/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0
 CCTV1ZUBOTEST,http://120.196.232.19:8088/rrs03.hw.gmcc.net/PLTV/651/224/3221226737/1.m3u8
 CCTV1,http://shuangyashan.coccc.online:65000/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0#http://www.kingtom-tech.com:9902/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://dz.mzsyt.com:7066/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&down=1
 CCTV1,http://shuangyashan.coccc.online:65000/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0#http://www.kingtom-tech.com:9902/tsfile/live/0001_2.m3u8?key=txiptv&playlive=0&authid=0#http://dz.mzsyt.com:7066/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&down=1
